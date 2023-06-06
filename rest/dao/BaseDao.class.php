@@ -26,7 +26,7 @@ class BaseDao
         $schema = Config::DB_SCHEMA();
         $port = Config::DB_HOST();*/
 
-        $this->conn = new PDO("mysql:host=$host;port= $port;dbname=$schema", $username, $password); 
+        $this->conn = new PDO("mysql:host=$host;port=$port;dbname=$schema", $username, $password); 
 
         /*$this->conn = new PDO("mysql:host=$host;dbname=$schema", $username, $password);
         -->is this port really necessary when connecting straight to the database*/

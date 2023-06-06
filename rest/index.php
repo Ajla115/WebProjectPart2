@@ -27,7 +27,7 @@ require_once __DIR__ . '/routes/VehicleRoutes.php';
 
 // it is still possible to add custom routes after the imports
 Flight::route('GET /', function () {
-    echo "Hello";
+    //$base = new BaseDao("customers"); ovo je mali hack da se pozove base dao samo na jednu tabelu
 });
 
 

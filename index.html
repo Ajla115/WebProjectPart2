@@ -101,25 +101,25 @@
                   <div class="modal-dialog">-->
                     <!-- Modal content-->
                    <!--<div class="modal-content" id="addCustomerModal">-->
-                <form id="addCustomerForm"> 
+                <form id="addCustomerForm" role="form"> 
                 <label class="form-label" for="customer_name">First Name:</label>
                 <div class="form-outline form-white mb-4">
-                  <input type="text" id="customer_name" required class="form-control form-control-lg" />
+                  <input type="text" name="customer_name" id="customer_name" class="form-control form-control-lg" />
                 </div>
                 
                 <label class="form-label" for="customer_surname">Last Name:</label>
                 <div class="form-outline form-white mb-4">
-                  <input type="text" id="customer_surname" required class="form-control form-control-lg" />
+                  <input type="text" id="customer_surname" name="customer_surname"  class="form-control form-control-lg" />
                 </div>
                 
                 <label class="form-label" for="email">Email:</label>
                 <div class="form-outline form-white mb-4">
-                  <input type="email" id="email" class="form-control form-control-lg" />
+                  <input type="email" id="email" name="email" class="form-control form-control-lg" />
                 </div>
                 
                 <label class="form-label" for="password">Password:</label>
                 <div class="form-outline form-white mb-4 position-relative">
-                    <input type="password" id="password" class="form-control form-control-lg" />
+                    <input type="password" id="password" name="password" class="form-control form-control-lg" />
                     <i class="bi bi-eye-slash position-absolute toggle-password" id="togglePassword"></i>
                 </div>
   
@@ -186,19 +186,31 @@ jQuery.validator.addMethod(
     "Please enter valid email address!"
   );
 
+  function formToJson(form) {
+    var array = $(form).serializeArray();
+    var json = {};
+
+    $.each(array, function() {
+      json[this.name] = this.value || '';
+    })
   
-$("#addCustomerForm").validate({
+    return json;
+  }
+
+  
+  function validateForm() {
+    $("#addCustomerForm").validate({
     focusCleanup: true,
     errorElement: "em",
-    rules: {
-      customer_name: "required",
+     rules: {
+       customer_name: "required",
       customer_surname: "required",
       password: {
-        required: true,
-        minlength: 2,
-        maxlength: 10,
-      },
+         required: true,
+         minlength: 2,
+         maxlength: 10,
     },
+     },
     messages: {
       customer_name: "First name field is required",
       customer_surname: "Last name field is required",
@@ -217,7 +229,12 @@ $("#addCustomerForm").validate({
     errorLabelContainer: "#messageBox1 ul",
     wrapper: "li",
     submitHandler: function (form, validator) {
-      $.post("../rest/customers", $("#addCustomerForm").serialize())
+      const data = formToJson(form);
+      console.log("test", typeof data);
+
+      
+
+      $.post(" rest/customers", data)
         .done(function () {
           toastr.success("User added");
           /*$("#addStudentModal").modal("toggle");
@@ -244,6 +261,7 @@ $("#addCustomerForm").validate({
       }
     },
   });
+  }
 
 
 
@@ -262,6 +280,8 @@ togglePassword.addEventListener('click', function() {
 });
 
 
+
+validateForm();
 
 </script>
  
