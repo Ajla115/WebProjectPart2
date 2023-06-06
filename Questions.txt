@@ -1,0 +1,9 @@
+1. Do method query and query_unique have to be protected in BaseDaoDa li ove fun. u BaseDao query i query_unique moraju biti protected
+2. Is it necessary to add port in the connection to DB, without the deployment to Digital Oceans
+3. Problem with one custom method in Customer.Dao.class.php
+4. Problem with two custom methods in Location.Dao.class.php
+5. When I do POST in VehicleRoutes.php, the automatically generated PK which I receive only with POST method in this class is random and 
+   extremely bigger than all of the PKs of the entries in the DB, and this only happens here,
+   with any other POST method, the new automatically generated PK is just for 1 bigger than the last PK of that table, 
+   should this be considered a problem or not?
+6. Do we need more data in the database?
