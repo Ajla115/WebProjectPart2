@@ -33,6 +33,9 @@
 <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/customer-service.js"></script>
+<script src="assets/js/utils.js"></script>
+
 
 </head>
 <body>
@@ -123,23 +126,6 @@
 }
 
 
-/*$(document).ready(function() {
-  $(".btn").click(function(event) {
-    event.preventDefault();  // Prevent the default action
-    var firstName = $("#firstName").val();
-    var lastName = $("#lastName").val();
-    var email = $("#email").val();
-    var password = $("#password").val();
-    var confirmPassword = $("#confirmPassword").val();
-
-    // Check if any field is empty
-    if (firstName === "" || lastName === "" || email === "" || password === "" || confirmPassword === "") {
-      toastr.warning('Please fill in all fields.');
-    } else {
-      toastr.success('User added to the database.', '', { onHidden: function() { window.location.href = 'index2.html'; } });
-    }
-  });
-});*/
 
 jQuery.validator.addMethod(
     "email",
@@ -147,7 +133,7 @@ jQuery.validator.addMethod(
       return (
         this.optional(element) ||
         /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(value)
-      ); /*regex za provjeru da li je email upisan kako treba*/
+      ); //regex za provjeru da li je email upisan kako treba
     },
     "Please enter valid email address!"
   );
@@ -164,7 +150,7 @@ jQuery.validator.addMethod(
   }
 
   
-  function validateForm() {
+ function validateForm() {
     $("#addCustomerForm").validate({
     focusCleanup: true,
     errorElement: "em",
@@ -202,9 +188,7 @@ jQuery.validator.addMethod(
 
       $.post(" rest/customers", data)
         .done(function () {
-          toastr.success("User added");
-          /*$("#addStudentModal").modal("toggle");
-          getStudents();*/
+          toastr.success("User added to the database");
           form.reset();
         })
         .fail(function () {

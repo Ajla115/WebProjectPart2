@@ -408,21 +408,3 @@ document.addEventListener('DOMContentLoaded', function() {
   "onHidden": function() { window.location.href = 'index.html'; }
 }
 
-
-$(document).ready(function() {
-  $(".btn").click(function(event) {
-    event.preventDefault();  // Prevent the default action
-    var firstName = $("#firstName").val();
-    var lastName = $("#lastName").val();
-    var email = $("#email").val();
-    var password = $("#password").val();
-    var confirmPassword = $("#confirmPassword").val();
-
-    // Check if any field is empty
-    if (firstName === "" || lastName === "" || email === "" || password === "" || confirmPassword === "") {
-      toastr.warning('Please fill in all fields.');
-    } else {
-      toastr.success('User added to the database.');
-    }
-  });
-});

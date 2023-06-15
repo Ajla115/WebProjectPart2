@@ -16,11 +16,12 @@ class BaseService{
     }
 
     public function add($entity){
-        return $this->dao->add($entity);
+        return $this->dao->add($entity); 
+        //umjesto da pisemo ovo u customerService, samo stavimo parent::add, i to se odnosi na ovu super klasu
     }
 
-    public function update($entity, $id){
-        return $this->dao->update($entity, $id);
+    public function update($entity, $id, $id_column = "id"){
+        return $this->dao->update($entity, $id, $id_column);
     }
     
     public function delete($id){

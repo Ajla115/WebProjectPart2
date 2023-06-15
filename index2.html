@@ -450,6 +450,21 @@
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 
+<script>
+     var token = localStorage.getItem("user_token");
+     if (token) {
+        //var user = Utils.parseJwt(token); da li treba ovo ako je jedan user, da nema ono da se bira user ili admin
+    
+        //$("#spapp").html(main);//ovdje treba ovaj spapp implement
+        //window.location.replace("index2.html");  //ovo je replacement dok se spapp ne uradi
+      
+    } else {
+
+      window.location.replace("index.html"); //ovo ovdje ovako da stoji
+
+    }
+</script>
+
 </body>
 
 </html>

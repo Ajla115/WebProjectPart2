@@ -28,8 +28,11 @@
 <link href="assets/css/style.css" rel="stylesheet"> 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/user-service.js"></script>
+<script src="assets/js/restclient.js"></script>
 
 
 </head>
@@ -40,45 +43,8 @@
     <div class="container d-flex align-items-center justify-content-lg-between">
 
     <h1 class="logo me-auto me-lg-0";><a href="index.html">DRIVENATION<span>.</span></a></h1>
-     <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto" href="index.html">Home</a></li>
-          <li class="dropdown">
-            <a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a class="nav-link scrollto" href="index.html#bio">Bio</a></li>
-              <li><a href="index.html#contact">Contact</a></li>
-              <li><a href="conditions.html">Conditions</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="pricing.html">Pricing</a></li>
-          <li class="dropdown">
-            <a href="#"><span>Cars</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="hatchback.html">Hatchback</a></li>
-              <li><a href="sedan.html">Sedan</a></li>
-              <li><a href="wagon.html">Wagon</a></li>
-              <li><a href="minivan.html">Minivan</a></li>
-              <li><a href="SUV.html">SUV</a></li>
-              <li><a href="electric.html">Electric</a></li>
-            </ul>
-          </li>
-          <li class="dropdown user-nav-link">
-            <a href="#"><span>English</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Bosanski</a></li>
-              <li><a href="#">Deutsch</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <i class="bi bi-list mobile-nav-toggle"></i>
 
-      <!-- end of navigation -->
-
-    </div>
-  </header>
-  <!-- End Header -->
+    </header>
 
   <section id="login" class = "page1">
     <div class="container py-1 h-100"> <!-- reduced vertical padding here -->
@@ -91,19 +57,18 @@
   
                 <h3 class="fw-bold mb-2">Login</h3>
                 <div class="line-separator"></div>
-
+                <form id="login-form" role="form"> 
                 <label class="form-label" for="email">Email</label>
                 <div class="form-outline form-white mb-4">
-                  <input type="email" id="email" class="form-control form-control-lg" />
+                  <input type="email" id="email" name = "email" class="form-control form-control-lg" />
                 </div>
-                
-                <label class="form-label" for="password">Password</label>
+                <label class="form-label" for="password">Password:</label>
                 <div class="form-outline form-white mb-4 position-relative">
-                    <input type="password" id="password" class="form-control form-control-lg" />
-                    <i class="bi bi-eye-slash position-absolute toggle-password"></i>
+                    <input type="password" id="password" name="password" class="form-control form-control-lg" />
+                    <i class="bi bi-eye-slash position-absolute toggle-password" id="togglePassword"></i>
                 </div>
-                <button class="btn btn-lg px-5" type="login">LOGIN</button>
-  
+                <button class="btn btn-lg px-5" type="submit">LOGIN</button>
+                </form>
               </div>
 
             </div>
@@ -114,8 +79,10 @@
   </section>
 
   <script>
+  
+  UserService.init();
     // Initialize Toastr
-  toastr.options = {
+ toastr.options = {
    "closeButton": false,
    "debug": false,
    "newestOnTop": false,
@@ -132,22 +99,24 @@
    "showMethod": "fadeIn",
    "hideMethod": "fadeOut"
  }
+
+
+
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
+
+togglePassword.addEventListener('click', function() {
+    // Toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // Toggle the eye slash icon
+    togglePassword.classList.toggle('bi-eye-slash');
+    // Toggle the eye icon
+    togglePassword.classList.toggle('bi-eye');
+});
+
  
- 
- $(document).ready(function() {
-   $(".btn").click(function(event) {
-     event.preventDefault();  // Prevent the default action
-     var password = $("#password").val();
-     var confirmPassword = $("#confirmPassword").val();
- 
-     // Check if any field is empty
-     if ( email === "" || password === "") {
-       toastr.warning('Please fill in all fields.');
-     } else {
-       toastr.success('Welcome, user.', '', { onHidden: function() { window.location.href = 'index2.html'; } });
-     }
-   });
- });
+
  
  </script>
   

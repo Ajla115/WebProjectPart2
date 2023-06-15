@@ -122,6 +122,10 @@ class BaseDao
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /* ova query je za custom metode jer je nekad bolje imati custom 
+    functions, a ne sve pisati u BaseDao zato sto onda npr sve funkcije 
+    koje su u BaseDao ne bi mogle biti primijenjene u svim drugim Daos*/
+
     protected function query_unique($query, $params)
     {
         $results = $this->query($query, $params);

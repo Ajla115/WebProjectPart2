@@ -11,9 +11,9 @@ class CustomerService extends BaseService
     }
 
     
-    public function update($entity, $id){
+    public function update($entity, $id, $id_column="id"){
         $entity['password'] = md5($entity['password']);
-        if(isset($entity['id_column'])){
+        if(isset($entity['id_column']) && !is_null($entity['id_column'])){
             return parent::update($entity, $id, $entity['id_column']);
         }
         return parent::update($entity, $id);
