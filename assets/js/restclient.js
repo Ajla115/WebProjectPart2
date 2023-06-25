@@ -6,7 +6,7 @@
             beforeSend: function (xhr) {
               xhr.setRequestHeader(  //ovaj dio sa beforeSend je potreban za tokene
                 "authorization",
-                 "Bearer " + localStorage.getItem("user_token")
+                  localStorage.getItem("user_token")
               );
             },
             success: function (data) {
