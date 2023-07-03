@@ -117,13 +117,13 @@
   "onclick": null,
   "showDuration": "300",
   "hideDuration": "1000",
-  "timeOut": "500",
+  "timeOut": "5000",
   "extendedTimeOut": "1000",
   "showEasing": "swing",
   "hideEasing": "linear",
   "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
-}
+  "hideMethod": "fadeOut" }
+
 
 
 
@@ -190,6 +190,9 @@ jQuery.validator.addMethod(
         .done(function () {
           toastr.success("User added to the database");
           form.reset();
+          setTimeout(function() {
+      window.location.href = 'index2.html';
+    }, 5000); // Redirect after 5 seconds
         })
         .fail(function () {
           toastr.error("User not added");

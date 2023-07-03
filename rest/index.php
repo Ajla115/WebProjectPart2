@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 require '../vendor/autoload.php';
 
 
@@ -9,7 +13,10 @@ require_once __DIR__ . '/services/EmployeeService.php';
 require_once __DIR__ . '/services/LocationService.php';
 require_once __DIR__ . '/services/ReviewService.php';
 require_once __DIR__ . '/services/VehicleService.php';
+require_once __DIR__ . '/services/UserService.php';
+
 require_once __DIR__ . '/dao/UserDao.php';
+
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
@@ -19,6 +26,8 @@ Flight::register('employeeService', "EmployeeService");
 Flight::register('locationService', "LocationService");
 Flight::register('reviewService', "ReviewService");
 Flight::register('vehicleService', "VehicleService");
+Flight::register('userService', "UserService");
+
 Flight::register('userDao', "UserDao");
 
 // middleware method for login
@@ -51,11 +60,26 @@ Flight::register('userDao', "UserDao");
     echo $openapi->toJson();
   });*/
 
-  Flight::route('GET /docs.json', function(){
+ /*Flight::route('GET /docs.json', function(){
     $directoriesToScan = ['routes']; // Adjust this array as necessary.
     $openapi = \OpenApi\Generator::scan($directoriesToScan);
     header('Content-Type: application/json');
     echo $openapi->toJson();
+});*/
+
+/* REST API documentation endpoint */
+Flight::route('GET /docs.json', function(){
+  $openapi = \OpenApi\scan('routes');
+  header('Content-Type: application/json');
+  echo $openapi->toJson();
+});
+
+/*const ui = SwaggerUIBundle({
+  url: "../docs.json",*/
+
+Flight::map('header', function($name){
+  $headers = getallheaders();
+  return @$headers[$name];
 });
 
   

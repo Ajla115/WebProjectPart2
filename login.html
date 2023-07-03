@@ -33,6 +33,7 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/user-service.js"></script>
 <script src="assets/js/restclient.js"></script>
+<script src="assets/js/login-service.js"></script>
 
 
 </head>
@@ -82,7 +83,7 @@
   
   UserService.init();
     // Initialize Toastr
- toastr.options = {
+toastr.options = {
    "closeButton": false,
    "debug": false,
    "newestOnTop": false,
@@ -115,6 +116,9 @@ togglePassword.addEventListener('click', function() {
     togglePassword.classList.toggle('bi-eye');
 });
 
+
+       // LoginService.init();
+   
  
 
  

@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
  // Initialize Toastr
- toastr.options = {
+ /*toastr.options = {
   "closeButton": false,
   "debug": false,
   "newestOnTop": false,
@@ -406,5 +406,5 @@ document.addEventListener('DOMContentLoaded', function() {
   "showMethod": "fadeIn",
   "hideMethod": "fadeOut",
   "onHidden": function() { window.location.href = 'index.html'; }
-}
+}*/
 

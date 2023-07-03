@@ -8,7 +8,7 @@ var UserService = {
       $("#login-form").validate({
         
         submitHandler: function (form) {
-          console.log("data123");
+          //console.log("data123");
           var entity = Object.fromEntries(new FormData(form).entries());
           UserService.login(entity);
         },
@@ -45,3 +45,5 @@ var UserService = {
   };
 
   //za logout treba samo staviti Button onClick = UserService.logout i tjt
+
+
