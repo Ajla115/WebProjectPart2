@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>User profile</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/car_favicon.png" rel="icon">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+ <!-- Template Main CSS File -->
+ <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+  
+  
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+ <script src="assets/js/main.js"></script>
+ 
+ 
+
+
+ <style>
+.user-nav-link {
+  margin-left: -15px;
+}
+
+.custom-div {
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+ </style>
+
+</head>
+
+<body>
+<!-- ======= Header/Navigation Menu ======= -->
+<header id="header" class="fixed-top header-inner-pages">
+ <div class="container d-flex align-items-center justify-content-lg-between">
+
+ <h1 class="logo me-auto me-lg-0";><a href="index2.html">DRIVENATION<span>.</span></a></h1>
+  <nav id="navbar" class="navbar order-last order-lg-0">
+     <ul>
+       <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+       <li class="dropdown">
+         <a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+         <ul>
+           <li><a href="index2.html#bio">Bio</a></li>
+           <li><a href="index2.html#contact">Contact</a></li>
+           <li><a href="conditions.html">Conditions</a></li>
+         </ul>
+       </li>
+       <li><a class="nav-link scrollto" href="pricing.html">Pricing</a></li>
+       <li class="dropdown">
+         <a href="#"><span>Cars</span> <i class="bi bi-chevron-down"></i></a>
+         <ul>
+           <li><a href="hatchback.html">Hatchback</a></li>
+           <li><a href="sedan.html">Sedan</a></li>
+           <li><a href="wagon.html">Wagon</a></li>
+           <li><a href="minivan.html">Minivan</a></li>
+           <li><a href="SUV.html">SUV</a></li>
+           <li><a href="electric.html">Electric</a></li>
+         </ul>
+       </li>
+       <li class="dropdown">
+         <a href="#"><span>English</span> <i class="bi bi-chevron-down"></i></a>
+         <ul>
+           <li><a href="#">Bosanski</a></li>
+           <li><a href="#">Deutsch</a></li>
+         </ul>
+       </li>
+       <li class="user-nav-link"><a class="nav-link scrollto" href="user.html">User</a></li>
+     </ul>
+   </nav>
+   <i class="bi bi-list mobile-nav-toggle"></i>
+
+   <!-- end of navigation -->
+    </div>
+  </header>
+  <!-- End Header -->
+
+<!--The main part-->
+<section id="user">
+<br>
+<br>
+
+
+<div class="container">
+  <div class="section-title d-flex justify-content-center align-items-center flex-column">
+    <img src="assets/img/user_logo.png" alt="User profile icon" class="img-fluid section-title user-logo">
+    <h3 class="user-name">Dino Biber</h3>
+  </div>
+  <br>
+  <div class="row">
+    <h4 class="title">Account Information</h4>
+    <button
+  type="button"
+  onClick = "showEditDialog()"
+  class="btn btn-info btn-lg"
+  data-toggle="modal"
+  data-target="#editCustomerModal">
+  Edit profile
+</button>
+    <hr>
+  </div>
+
+  <!-- Edit Modal -->
+<!-- Modal -->
+<div class="modal fade" id="editCustomerModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" id="editCustomerModal">
+      <div class="spinner-border" id = "editModalSpinner" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <form id="editCustomerForm">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit customer</h4>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="edit_customer_id" name="id" required hidden />
+          <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input
+              type="text"
+              id="edit_first_name"
+              name="first_name"
+              required
+              class="form-control"
+            />
+          </div>
+          <div>
+            <label for="lname">Last Name:</label>
+            <input
+              type="text"
+              id="edit_last_name"
+              name="last_name"
+              class="form-control"
+            />
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="edit_email"
+              name="email"
+              class="form-control"
+            />
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="edit_password"
+              name="password"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="error"><span></span></div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-default"
+            id="close_button"
+            data-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="submit" onClick="editCustomer()"; class="btn btn-success">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label>Title</label>
+      <div class="custom-div" id="titleDiv">Mr.</div>
+    </div>
+    <div class="form-group col-md-4">
+      <label>First name</label>
+      <div class="custom-div" id="firstnameDiv">Dino</div>
+    </div>
+    <div class="form-group col-md-4">
+      <label>Last name</label>
+      <div class="custom-div" id="lastnameDiv">Biber</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Job description</label>
+    <div class="custom-div" id="jobDescriptionDiv">Software Engineer</div>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <div class="custom-div" id="emailDiv">dinobiber@gmail.com</div>
+  </div>
+  <hr>
+  
+</div>
+
+<table id="customers"></table>
+
+    
+  </section>
+  
+
+  
+ 
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+  
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>DRIVENATION<span>.</span></h3>
+              <p>
+                Halilovici 13 <br>
+                Sarajevo, 71000<br><br>
+                <strong>Phone:</strong> ++38761547895<br>
+                <strong>Email:</strong> mds@info.ba<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+  
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Gp</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+
+
+
+
+<script type="text/javascript">
+  /*CustomerService.init();*/
+
+
+  function showEditDialog(id) {
+    $("#editCustomerModal").modal("show");
+    $("#editModalSpinner").show();
+    $("#editCustomerForm").hide();
+    $.get("../rest/customers/" + id, function (data) {
+      console.log(data);
+      $("#edit_first_name").val(data.customer_name);
+      $("#edit_last_name").val(data.customer_surname);
+      $("#edit_email").val(data.email);
+      $("#edit_password").val(data.password);
+      $("#edit_customer_id").val(data.id);
+      $("#editModalSpinner").hide();
+      $("#editCustomerForm").show();
+    });
+  }
+
+  function editCustomer() {
+    $("#editCustomerForm").validate({
+      submitHandler: function (form, validator) {
+        data = {
+          customer_name: $("#edit_first_name").val(),
+          customer_surname: $("#edit_last_name").val(),
+          email: $("#edit_email").val(),
+          password: $("#edit_password").val(),
+        };
+        $.ajax({
+          url: "rest/customer/" + $("#edit_customer_id").val(), //da ne treba ovdje opet ../
+          type: "PUT",
+          data: JSON.stringify(data),
+          contentType: "application/json",
+          dataType: "json",
+          success: function (result) {
+            toastr.success("User has been updated successfully");
+            /*$("#editCustomerModal").modal("toggle");
+            getStudents();*/
+          },
+          error: function (XMLHttpRequest, textStatus, errorThrown) {
+            toastr.error("Error! User has not been updated.");
+          },
+        });
+      },
+    });
+}
+
+jQuery.validator.addMethod(
+    "email",
+    function (value, element) {
+      return (
+        this.optional(element) ||
+        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(value)
+      );
+    },
+    "Please enter valid email address!"
+  );
+
+  </script>
+
+</body>
+
+</html>

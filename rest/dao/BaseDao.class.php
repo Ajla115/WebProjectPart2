@@ -26,7 +26,7 @@ class BaseDao
         $schema = Config::DB_SCHEMA();
         $port = Config::DB_HOST();*/
 
-        $this->conn = new PDO("mysql:host=$host;port= $port;dbname=$schema", $username, $password); 
+        $this->conn = new PDO("mysql:host=$host;port=$port;dbname=$schema", $username, $password); 
 
         /*$this->conn = new PDO("mysql:host=$host;dbname=$schema", $username, $password);
         -->is this port really necessary when connecting straight to the database*/
@@ -121,6 +121,10 @@ class BaseDao
         $stmt->execute($params);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    /* ova query je za custom metode jer je nekad bolje imati custom 
+    functions, a ne sve pisati u BaseDao zato sto onda npr sve funkcije 
+    koje su u BaseDao ne bi mogle biti primijenjene u svim drugim Daos*/
 
     protected function query_unique($query, $params)
     {

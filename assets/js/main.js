@@ -1,10 +1,4 @@
-/**
-* Template Name: Gp
-* Updated: Mar 10 2023 with Bootstrap v5.2.3
-* Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 (function() {
   "use strict";
 
@@ -335,29 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   });
 
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
+ 
 
   /**
    * Testimonials slider
@@ -400,17 +372,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  var mySwiper = new Swiper('.swiper-container', {
+  var mySwiper = new Swiper('.car-swiper-container', {
     slidesPerView: 'auto',
     spaceBetween: 20,
     grabCursor: true,
     pagination: {
-      el: '.swiper-pagination',
+      el: '.car-swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.car-swiper-button-next',
+      prevEl: '.car-swiper-button-prev',
     },
   });
 });
+
+
+ // Initialize Toastr
+ toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "500",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut",
+  "onHidden": function() { window.location.href = 'index.html'; }
+}
+
