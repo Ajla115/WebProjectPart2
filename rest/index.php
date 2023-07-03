@@ -35,7 +35,8 @@ Flight::register('userDao', "UserDao");
     //perform JWT decode
     $path = Flight::request()->url;
     if ($path == '/login' /*|| $path == '/signup'*/ || $path == '/docs.json') return TRUE; // exclude login route from middleware
-  //ovo signup moram skontati kako trebam dodati jer mi se to odnosi na ovaj index file
+    //ove rute su ovdje excluded od autorizacije, znaci da njima svako moze pristupiti
+    //ovo signup moram skontati kako trebam dodati jer mi se to odnosi na ovaj index file
 
     $headers = getallheaders();
     //Flight::json(['headers' => $headers]);
@@ -54,29 +55,15 @@ Flight::register('userDao', "UserDao");
     }
   });
 
-  /* REST API documentation endpoint */
-/*Flight::route('GET /docs.json', function(){
-    $openapi = \OpenApi\Generator::scan('routes');
-    header('Content-Type: application/json');
-    echo $openapi->toJson();
-  });*/
 
- /*Flight::route('GET /docs.json', function(){
-    $directoriesToScan = ['routes']; // Adjust this array as necessary.
-    $openapi = \OpenApi\Generator::scan($directoriesToScan);
-    header('Content-Type: application/json');
-    echo $openapi->toJson();
-});*/
 
 /* REST API documentation endpoint */
-/*Flight::route('GET /docs.json', function(){
+Flight::route('GET /docs.json', function(){
   $openapi = \OpenApi\scan('routes');
   header('Content-Type: application/json');
   echo $openapi->toJson();
-});*/
+});
 
-/*const ui = SwaggerUIBundle({
-  url: "../docs.json",*/
 
 
 // import all routes
@@ -89,9 +76,9 @@ require_once __DIR__ . '/routes/VehicleRoutes.php';
 require_once __DIR__ . '/routes/UserRoutes.php';
 
 // it is still possible to add custom routes after the imports
-Flight::route('GET /', function () {
+/*Flight::route('GET /', function () {
     //$base = new BaseDao("customers"); ovo je mali hack da se pozove base dao samo na jednu tabelu
-});
+});*/
 
 
 Flight::start();

@@ -10,4 +10,6 @@
  * @OA\SecurityScheme(securityScheme="ApiKeyAuth", type="apiKey", in="header", name="Authorization" )
  */
 
+
+ //ovdje za production environment ce ici link od deployed application/rest
 ?>

@@ -7,8 +7,9 @@
  * )
  */
 
- //ako ne zelim da pise authorizacija kod ovih routes, onda trebam izbaciti ovo security={{"ApiKeyAuth": {}}},
-//works
+ //ako ne zelim da pise authorizacija kod ovih routes u swaggeru, onda trebam izbaciti ovo security={{"ApiKeyAuth": {}}},
+
+ //works
 //get all customers from database
 Flight::route('GET /customers', function () {
     Flight::json(Flight::customerService()->get_all());
@@ -121,7 +122,7 @@ Flight::route('DELETE /customers/@id', function ($id) {
 });
 
 
-
+/*dodati na svaku endpoint swagger*/
 
 
 ?>

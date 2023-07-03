@@ -46,6 +46,7 @@ Flight::route('POST /login', function(){
   }
 });
 
+/*ovdje ide login bez autentifikacije*/
 
 
 ?>
