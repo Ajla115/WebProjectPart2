@@ -17,7 +17,7 @@
           },
         });
 
-        addCustomer: function (customer) {
+         function addCustomer(customer) {
             console.log("post");
             $.ajax({
               url: "rest/customer",
@@ -37,7 +37,7 @@
                 //StudentService.getStudents();
               },
             });
-          },
+          }
 
 
         jQuery.validator.addMethod(
@@ -130,6 +130,9 @@
 
 
        
-},}
+},
+
+};
+
 
 */

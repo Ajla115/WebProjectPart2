@@ -31,14 +31,15 @@ Flight::register('userService', "UserService");
 Flight::register('userDao', "UserDao");
 
 // middleware method for login
-/*Flight::route('/*', function(){
+    Flight::route('/*', function(){
     //perform JWT decode
     $path = Flight::request()->url;
-    if ($path == '/login' || $path == '/signup' || $path == '/docs.json') return TRUE; // exclude login route from middleware
-   //ovo signup moram skontati kako trebam dodati jer mi se to odnosi na ovaj index file
+    if ($path == '/login' /*|| $path == '/signup'*/ || $path == '/docs.json') return TRUE; // exclude login route from middleware
+  //ovo signup moram skontati kako trebam dodati jer mi se to odnosi na ovaj index file
 
     $headers = getallheaders();
-    if (!$headers['Authorization']){
+    //Flight::json(['headers' => $headers]);
+    if (@!$headers['Authorization']){
       Flight::json(["message" => "Authorization is missing"], 403);
       return FALSE;
     }else{
@@ -51,7 +52,7 @@ Flight::register('userDao', "UserDao");
         return FALSE;
       }
     }
-  });*/
+  });
 
   /* REST API documentation endpoint */
 /*Flight::route('GET /docs.json', function(){
@@ -68,21 +69,15 @@ Flight::register('userDao', "UserDao");
 });*/
 
 /* REST API documentation endpoint */
-Flight::route('GET /docs.json', function(){
+/*Flight::route('GET /docs.json', function(){
   $openapi = \OpenApi\scan('routes');
   header('Content-Type: application/json');
   echo $openapi->toJson();
-});
+});*/
 
 /*const ui = SwaggerUIBundle({
   url: "../docs.json",*/
 
-Flight::map('header', function($name){
-  $headers = getallheaders();
-  return @$headers[$name];
-});
-
-  
 
 // import all routes
 require_once __DIR__ . '/routes/CustomerRoutes.php';
