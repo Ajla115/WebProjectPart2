@@ -1,6 +1,9 @@
 /*--------------------------------------------------------------
 # Generalne stvari
 --------------------------------------------------------------*/
+.button-container {
+  display: flex;
+}
 
 
 
@@ -446,6 +449,9 @@ h6 {
   background-color: darkorange !important;
   color: white !important;
 }
+
+
+
 
 .card {
   background-color: white;

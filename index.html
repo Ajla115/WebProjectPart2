@@ -190,10 +190,17 @@ jQuery.validator.addMethod(
       $.post(" rest/customers", data)
         .done(function () {
           toastr.success("User added to the database");
+
+
+          // save user data and JWT in localStorage
+    //localStorage.setItem('user', JSON.stringify(response.user));
+    //localStorage.setItem('token', response.token);
+    //ovaj dio iznad je dodan za potrebe izvlacenja podataka za user profile
+
           form.reset();
           setTimeout(function() {
       window.location.href = 'index2.html';
-    }, 5000); // Redirect after 5 seconds
+   }, 5000); // Redirect after 5 seconds
         })
         .fail(function () {
           toastr.error("User not added");
@@ -233,9 +240,8 @@ togglePassword.addEventListener('click', function() {
     togglePassword.classList.toggle('bi-eye');
 });
 
-
-
 validateForm();
+
 
 </script>
  
