@@ -7,7 +7,7 @@
 
 
 //: and time managment in the detail car page
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
   const timeInput1 = document.getElementById('customTimeInput');
   const timeInput2 = document.getElementById('customTimeInput2');
 
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     input.value = formattedValue;
   }
-});
+});*/
 
 //slash adding automatically in the date input in the detail car page
 document.addEventListener('DOMContentLoaded', function () {
@@ -70,6 +70,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     input.value = inputValue;
   }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const timeInput1 = document.getElementById('customTimeInput');
+  if (timeInput1) {
+    timeInput1.addEventListener('input', function (event) {
+      handleTimeInput(event.target);
+    });
+  } else {
+    console.error("Element with ID 'customTimeInput' not found");
+  }
+  // Similarly for other elements...
 });
 
 
@@ -370,6 +382,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  const timeInput1 = document.getElementById('customTimeInput');
+  if (timeInput1) {
+    timeInput1.addEventListener('input', function (event) {
+      handleTimeInput(event.target);
+    });
+  } else {
+    console.error("Element with ID 'customTimeInput' not found");
+  }
+  // Similarly for other elements...
+});
 
 document.addEventListener('DOMContentLoaded', function() {
   var mySwiper = new Swiper('.car-swiper-container', {
@@ -386,7 +409,6 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });
 });
-
 
  // Initialize Toastr
  /*toastr.options = {
