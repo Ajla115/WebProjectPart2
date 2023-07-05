@@ -29,6 +29,8 @@
 <!-- Template Main CSS File -->
 <link href="assets/css/style.css" rel="stylesheet"> 
 
+
+
 </head>
 <body>
 
@@ -135,7 +137,7 @@
 
      <!-- ======= Partners Section ======= -->
      <section id="clients" class="clients">
-      <div class="container" data-aos="zoom-in">
+      <div class="container">
 
         <div class="section-title">
           <p >Our partners</p>
@@ -160,78 +162,110 @@
 </section><!-- End Clients Section -->
 
 
-    <!-- ======= Discount Section ======= -->
+    <!-- ======= HighChart Section ======= -->
     <section id="features" class="features">
       <div class="container">
 
         <div class="section-title">
-          <p >Discount</p>
-          <h2>Explore offers of the day</h2>
+          <p >Popularity</p>
+          <h2>See our yearly increase in customers</h2>
         </div>
 
-        <div class="row justify-content-center"> 
-        <div class="col-md-4">
-          <div class="car-wrap rounded ftco-animate">
-            <div class="img rounded d-flex align-items-end" style="background-image: url(slikeAuta/chrysler.webp);"></div>
-            <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Chrysler Pacifica</a></h2>
-              <div class="d-flex mb-3">
-                <p class="price">
-                  <span class="crossed">150 BAM per day</span>
-                  <span class="bold-red">123BAM</span></p>
-              </div>
-              <p class="d-flex mb-0 d-block">
-                <a href="minivanDetail.html" class="BookNowButton"><span class="ButtonText">BOOK NOW</span></a>
-                <a href="minivanDetail.html" class="btn btn-secondary py-2 ml-1">Details</a>
-              </p>
-            </div>
-          </div>
-        </div>
+        <figure class="highcharts-figure">
+          <div id="container"></div>
+          
+      </figure>
 
-        <div class="col-md-4">
-          <div class="car-wrap rounded ftco-animate">
-            <div class="img rounded d-flex align-items-end" style="background-image: url(slikeAuta/alfa.webp);"></div>
-            <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Alfa Romeo Stelvia</a></h2>
-              <div class="d-flex mb-3">
-                <p class="price">
-                <span class="crossed">120 BAM per day</span>
-                <span class="bold-red">102 BAM</span></p>
-              </div>
-              <p class="d-flex mb-0 d-block">
-                <a href="SUVDetail.html" class="BookNowButton"><span class="ButtonText">BOOK NOW</span></a>
-                <a href="SUVDetail.html" class="btn btn-secondary py-2 ml-1">Details</a>
-              </p>
-            </div>
-          </div>
+
+<div class="section-title">
+          <p >Feedback</p>
+          <h2>Comments of satisfied customers</h2>
         </div>
+       
       </div></div>
-    </section><!-- End Discount Section -->
+      
+    </section><!-- End Highcharts Section -->
 
   
-    <!-- ======= Testimonials Section ======= -->
-    <div class = "container">
-        <div class="section-title">
-      <p>Satisfied Customers</p>
-      <h2>Check what our customers have to say about us</h2>
-    </div>
-    </div>
+      <!-- ======= Testimonials Section ======= -->
 
-    <section id="testimonials" class="testimonials">
+<section id="testimonials" class="testimonials">
       <div class="container">
-        
-        <div class="testimonials-slider swiper"data-aos-delay="100">
-          <div class="swiper-wrapper">
-            <!--here, everything will be inserted through ajax-->
 
-            
+        <div class="testimonials-slider swiper">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Jurica Koletic</h3>
+                <h4>Lawyer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Great rental experience. The staff was friendly and helpful, and the car was in excellent condition. Highly recommended.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Amani Begic</h3>
+                <h4>Designer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  As a foreign resident, I had an excellent rental experience. The process was quick, the car was clean and well-maintained.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Lamija Kolic</h3>
+                <h4>TV Host</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I rented a car for a weekend getaway and was impressed with the affordable rates and variety of vehicle options. Will definitely use this rental company again.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Damir Hodzic</h3>
+                <h4>Company Manager</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  The customer service was exceptional! The staff went above and beyond to accommodate my needs and ensure a smooth rental experience.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>Sead Ramic</h3>
+                <h4>Economist</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I had a last-minute change of plans and needed a rental car ASAP. This company was able to accommodate my request and provide excellent service and help despite the short notice. Thank you!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
 
       </div>
     </section><!-- End Testimonials Section -->
-   
+
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -300,9 +334,8 @@
 
   </main><!-- End #main -->
 
-<!-- Template Main JS File -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="assets/js/main.js"></script>
+
+
 
 <!-- Vendor JS Files -->
 <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -312,6 +345,14 @@
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<!-- Template Main JS File -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="assets/js/highcharts.js"></script>
+<script src="assets/js/main.js"></script>
 
 
 <script>
@@ -332,7 +373,7 @@
     };
 
 
-    $(document).ready(function() {
+   /* $(document).ready(function() {
     $.ajax({
         url: 'rest/getTestimonials',  // Replace with the URL to your getTestimonials route
         type: 'GET',
@@ -362,7 +403,7 @@
             console.log('Error:', error);
         }
     });
-});
+});*/
 
 </script>
 

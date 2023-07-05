@@ -7,7 +7,7 @@
 
 
 //: and time managment in the detail car page
-/*document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
   const timeInput1 = document.getElementById('customTimeInput');
   const timeInput2 = document.getElementById('customTimeInput2');
 
@@ -43,7 +43,7 @@
 
     input.value = formattedValue;
   }
-});*/
+});
 
 //slash adding automatically in the date input in the detail car page
 document.addEventListener('DOMContentLoaded', function () {
