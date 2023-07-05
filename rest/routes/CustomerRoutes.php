@@ -55,6 +55,7 @@ Flight::route('GET /customers/@id', function ($id) {
 *     )
 * )
 */
+
 //works
 //add a new customer to the database
 Flight::route('POST /customers', function () {
@@ -91,7 +92,7 @@ Flight::route('POST /customers', function () {
 
 //works
 //update an existing customer based upon its id as a parameter
-Flight::route("PUT /customers/@cd", function($id){
+Flight::route("PUT /customers/@id", function($id){
     $data = Flight::request()->data->getData();
     Flight::json(['message' => 'Customer edited succesfully', 'data' => Flight::customerService()->update($data, $id)]); 
     //-> converts the results to the JSON form
@@ -121,8 +122,6 @@ Flight::route('DELETE /customers/@id', function ($id) {
     Flight::customerService()->delete($id);
 });
 
-
-/*dodati na svaku endpoint swagger*/
 
 
 ?>

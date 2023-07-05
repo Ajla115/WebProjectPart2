@@ -11,9 +11,6 @@ class EmployeeService extends BaseService
     }
 
 
-    function getEmployeeByIdAndLocationId($employee_id, $location_id)
-    {
-        return $this->dao->getEmployeeByIdAndLocationId($employee_id, $location_id);
-    }
+ 
 }
 ?>

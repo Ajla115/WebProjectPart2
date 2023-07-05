@@ -11,15 +11,6 @@ class LocationService extends BaseService
     }
 
 
-    function getNumberOfBookingsPerLocation($location_id)
-    {
-        return $this->dao->getNumberOfBookingsPerLocation($location_id);
-    }
-
-    function getContactInfo($id) 
-    {
-        return $this->dao->getContactInfo($id);
-    }
 
      
 }

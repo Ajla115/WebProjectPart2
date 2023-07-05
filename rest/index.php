@@ -14,6 +14,7 @@ require_once __DIR__ . '/services/LocationService.php';
 require_once __DIR__ . '/services/ReviewService.php';
 require_once __DIR__ . '/services/VehicleService.php';
 require_once __DIR__ . '/services/UserService.php';
+require_once __DIR__ . '/services/TestemonialsService.php';
 
 require_once __DIR__ . '/dao/UserDao.php';
 
@@ -27,18 +28,20 @@ Flight::register('locationService', "LocationService");
 Flight::register('reviewService', "ReviewService");
 Flight::register('vehicleService', "VehicleService");
 Flight::register('userService', "UserService");
+Flight::register('testemonialsService', "TestemonialsService");
+
 
 Flight::register('userDao', "UserDao");
 
 // middleware method for login
-    Flight::route('/*', function(){
+  /*  Flight::route('/*', function(){
     //perform JWT decode
     $path = Flight::request()->url;
-    if ($path == '/login' /*|| $path == '/signup'*/ || $path == '/docs.json') return TRUE; // exclude login route from middleware
+    if ($path == '/login' /*|| $path == '/signup'*/ /*|| $path == '/docs.json') return TRUE;*/ // exclude login route from middleware
     //ove rute su ovdje excluded od autorizacije, znaci da njima svako moze pristupiti
     //ovo signup moram skontati kako trebam dodati jer mi se to odnosi na ovaj index file
 
-    $headers = getallheaders();
+   /* $headers = getallheaders();
     //Flight::json(['headers' => $headers]);
     if (@!$headers['Authorization']){
       Flight::json(["message" => "Authorization is missing"], 403);
@@ -54,7 +57,7 @@ Flight::register('userDao', "UserDao");
       }
     }
   });
-
+*/
 
 
 /* REST API documentation endpoint */
@@ -74,6 +77,7 @@ require_once __DIR__ . '/routes/LocationRoutes.php';
 require_once __DIR__ . '/routes/ReviewRoutes.php';
 require_once __DIR__ . '/routes/VehicleRoutes.php';
 require_once __DIR__ . '/routes/UserRoutes.php';
+require_once __DIR__ . '/routes/TestemonialsRoutes.php';
 
 // it is still possible to add custom routes after the imports
 /*Flight::route('GET /', function () {
