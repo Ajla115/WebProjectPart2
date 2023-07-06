@@ -23,6 +23,8 @@ class UserDao extends BaseDao{
     {
         return $this->query_unique("SELECT * FROM customers WHERE customer_name = :customer_name AND customer_surname = :customer_surname", ["customer_name" => $customer_name, "customer_surname" => $customer_surname]);
     }
+
+
 }
 
 

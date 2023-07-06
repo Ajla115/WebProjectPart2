@@ -34,15 +34,16 @@ Flight::register('testemonialsService', "TestemonialsService");
 Flight::register('userDao', "UserDao");
 
 // middleware method for login
-  /*  Flight::route('/*', function(){
+    Flight::route('/*', function(){
     //perform JWT decode
     $path = Flight::request()->url;
-    if ($path == '/login' /*|| $path == '/signup'*/ /*|| $path == '/docs.json') return TRUE;*/ // exclude login route from middleware
+    if ($path == '/login' /*|| $path == '/signup'*/ || $path == '/docs.json') return TRUE; 
+    // exclude login route from middleware
     //ove rute su ovdje excluded od autorizacije, znaci da njima svako moze pristupiti
     //ovo signup moram skontati kako trebam dodati jer mi se to odnosi na ovaj index file
 
-   /* $headers = getallheaders();
-    //Flight::json(['headers' => $headers]);
+   $headers = getallheaders();
+    Flight::json(['headers' => $headers]);
     if (@!$headers['Authorization']){
       Flight::json(["message" => "Authorization is missing"], 403);
       return FALSE;
@@ -57,7 +58,7 @@ Flight::register('userDao', "UserDao");
       }
     }
   });
-*/
+
 
 
 /* REST API documentation endpoint */

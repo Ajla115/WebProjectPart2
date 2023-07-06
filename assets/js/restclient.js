@@ -3,12 +3,12 @@
           $.ajax({
             url: "rest/" + url,
             type: "GET",
-            beforeSend: function (xhr) {
+           /* beforeSend: function (xhr) {
               xhr.setRequestHeader(  //ovaj dio sa beforeSend je potreban za tokene
                 "Authorization",
                   localStorage.getItem("user_token")
               );
-            },
+            },*/
             success: function (data) {
               if (success) toastr.success(data);
             },
