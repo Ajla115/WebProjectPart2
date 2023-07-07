@@ -8,10 +8,7 @@ class TestemonialsDao extends BaseDao {
         parent::__construct("testemonials");
     }
 
-  public function getAllTestimonials() {
-    $stmt = $this->query('SELECT * FROM testemonials');
-    //return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
+ 
 }
 
 

@@ -1,4 +1,5 @@
 <?php
+use Firebase\JWT\JWT;
 
 /**
  * @OA\Get(path="/customers", tags={"customers"}, security={{"ApiKeyAuth": {}}},
@@ -60,8 +61,18 @@ Flight::route('GET /customers/@id', function ($id) {
 //add a new customer to the database
 Flight::route('POST /customers', function () {
     $data = Flight::request()->data->getData();
-    Flight::json(Flight::customerService()->add($data));
+
+    // Add the customer to the database
+    $customer = Flight::customerService()->add($data);
+
+    // Generate the JWT token
+    $jwt = JWT::encode($customer, Config::JWT_SECRET(), 'HS256');
+
+    // Return the JWT token in the response
+    Flight::json(['token' => $jwt, 'customer' => $customer]);
 });
+
+
 
 
 /**

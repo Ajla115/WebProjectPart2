@@ -34,15 +34,15 @@ Flight::register('testemonialsService', "TestemonialsService");
 Flight::register('userDao', "UserDao");
 
 // middleware method for login
-   /* Flight::route('/*', function(){
+  /* Flight::route('/*', function(){
     //perform JWT decode
     $path = Flight::request()->url;
-    if ($path == '/login' /*|| $path == '/signup'*/ /*|| $path == '/docs.json') return TRUE; */
+    if ($path == '/login' || $path == '/customers' || $path == '/docs.json') return TRUE; 
     // exclude login route from middleware
     //ove rute su ovdje excluded od autorizacije, znaci da njima svako moze pristupiti
-    //ovo signup moram skontati kako trebam dodati jer mi se to odnosi na ovaj index file
+    //ovo customers se odnosi na signup 
 
-   /*$headers = getallheaders();
+   $headers = getallheaders();
     Flight::json(['headers' => $headers]);
     if (@!$headers['Authorization']){
       Flight::json(["message" => "Authorization is missing"], 403);
@@ -57,7 +57,55 @@ Flight::register('userDao', "UserDao");
         return FALSE;
       }
     }
-  });*/
+  });
+*/
+/*Flight::route('/*', function(){
+  // Perform JWT decode
+  $path = Flight::request()->url;
+  if ($path == '/login' || $path == '/customers' || $path == '/docs.json') return true;
+
+  //$headers = Flight::request()->headers;
+  $headers = getallheaders();
+  Flight::json(['headers' => $headers]);
+  if (!isset($headers['Authorization'])) {
+      Flight::json(["message" => "Authorization is missing"], 403);
+      return false;
+  } else {
+      try {
+          $decoded = (array)JWT::decode($headers['Authorization'], Config::JWT_SECRET(), 'HS256');
+          Flight::set('user', $decoded);
+          return true;
+      } catch (\Exception $e) {
+          Flight::json(["message" => "Authorization token is not valid"], 403);
+          return false;
+      }
+  }
+});*/
+Flight::route('/*', function(){
+  // Perform JWT decode
+  $path = Flight::request()->url;
+  if ($path == '/login' || $path == '/customers' || $path == '/docs.json') return true;
+
+  //$headers = Flight::request()->headers;
+  $headers = getallheaders();
+  //echo $headers['Authorization'];
+  Flight::json(['headers' => $headers]);
+  if (!isset($headers['Authorization'])) {
+    Flight::json(["message" => "Authorization is missing"], 403);
+    return false;
+  } else {
+    try {
+      $jwtSecret = Config::JWT_SECRET();
+      $algorithm = ['HS256'];
+      $decoded = (array)JWT::decode($headers['Authorization'], $jwtSecret, $algorithm);
+      Flight::set('user', $decoded);
+      return true;
+    } catch (\Exception $e) {
+      Flight::json(["message" => "Authorization token is not valid"], 403);
+      return false;
+    }
+  }
+});
 
 
 

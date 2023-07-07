@@ -364,15 +364,16 @@
   //ovo je u slucaju da nemamo token, znaci da nam ne da dalje nastaviti, vec vraca na pocetnu stranicu
      var token = localStorage.getItem("user_token");
      if (token) {
+      
         //var user = Utils.parseJwt(token); da li treba ovo ako je jedan user, da nema ono da se bira user ili admin
     
         //$("#spapp").html(main);//ovdje treba ovaj spapp implement
         //window.location.replace("index2.html");  //ovo je replacement dok se spapp ne uradi
         //ovdje ne treba nista od ovoga koda pretpostavljam jer bez ovoga radi kako treba, a inace je bilo inifinite loop
       
-    } else {
+   } else {
 
-      window.location.replace("index.html"); //ovo ovdje ovako da stoji
+      window.location.replace("index2.html"); //ovo ovdje ovako da stoji
 
     };
 
@@ -382,8 +383,33 @@
  
 
   $(document).ready(function() {
+
     $.ajax({
-        url: 'rest/getTestimonials',  // Replace with the URL to your getTestimonials route
+    url: 'rest/tests',
+    type: 'GET',
+    success: function(data) {
+        // Here, append your data to the Swiper slides
+        data.forEach(item => {
+            // Make sure to adapt this line to match your data structure and your HTML needs
+            $('.swiper-wrapper').append('<div class="swiper-slide">' + item + '</div>');
+        });
+        // After the slides have been appended, then you can initialize the Swiper
+        var swiper = new Swiper('.swiper-container', {
+            // Swiper settings here
+        });
+    },
+    error: function(error) {
+        console.error('Error:', error);
+    }
+});
+
+let myElement = Dom7('#myElement');
+console.log('myElement:', myElement); // Debug logging
+myElement.addClass('myClass');
+
+
+    /*$.ajax({
+        url: 'rest/tests',  // Replace with the URL to your getTestimonials route
         type: 'GET',
         success: function(data) {
           
@@ -411,7 +437,7 @@
         error: function(error) {
             console.log('Error:', error);
         }
-    });
+    });*/
 });
 
 </script>

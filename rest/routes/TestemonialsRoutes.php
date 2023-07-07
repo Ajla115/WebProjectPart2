@@ -6,9 +6,10 @@
  * )
  */
 
-Flight::route('GET /getTestimonials', function(){
-  Flight::json(Flight::testemonialsService()->getAllTestimonials());
+Flight::route('GET /tests', function(){
+  Flight::json(Flight::testemonialsService()->get_all());
 });
+  
 
 
 ?>

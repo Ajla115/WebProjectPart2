@@ -73,6 +73,22 @@
   margin-right: 650px;
 }
 
+.small-button {
+  padding: 5px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: #007BFF;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.small-button:hover {
+  background-color: #0056b3;
+}
+
+
  </style>
 
 </head>
@@ -199,11 +215,15 @@
             <label for="edit_email">Email</label>
             <input type="email" class="form-control" id="edit_email" placeholder="Enter Email">
           </div>
+          <div class="form-group">
+            <label for="edit_password">Password</label>
+            <input type="string" class="form-control" id="edit_password" placeholder="Enter Password">
+          </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="editProfile()">Save changes</button>
+        <button type="button" class="small-button" data-dismiss="modal">Close</button>
+        <button type="button" class="small-button onclick="editProfile()">Save changes</button>
       </div>
     </div>
   </div>
@@ -212,107 +232,106 @@
 
 
  
-  <script> 
-    // Retrieve the JWT payload from local storage
-    var token = localStorage.getItem('user_token');
-    
-    // Parse the JWT payload to get the first_name and last_name and email values
-    var payload = JSON.parse(atob(token.split('.')[1]));
-    
-    // Get the first_name, last_name and email values
-    var firstName = payload.customer_name;
-    var lastName = payload.customer_surname;
-    var email = payload.email;
-    
-    // Set the content of the divs
-    document.getElementById("fullnameDiv").innerText = firstName + " " + lastName;
-    document.getElementById("firstnameDiv").innerText = firstName;
-    document.getElementById("lastnameDiv").innerText = lastName;
-    document.getElementById("emailDiv").innerText =  email;
-
-    function showEditDialog() {
-    // Show modal and loading spinner, hide form
-    $("#editCustomerModal").modal("show");
-    $("#editModalSpinner").show();
-    $("#editCustomerForm").hide();
+<script> 
+  // Retrieve the JWT payload from local storage
+  var token = localStorage.getItem('user_token');
   
-    // AJAX call to get the data for the user
-    $.ajax({
-        url: "rest/customers/" + localStorage.getItem('id'),
-        /*beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", localStorage.getItem('user_token'));
-        },*/
-        type: "GET",
-        success: function (data) {
-            // Populate the form with the returned data
-            $("#editFirstName").val(data.firstName);
-            $("#editLastName").val(data.lastName);
-            $("#editEmail").val(data.email);
-            $("#userId").val(data.id);
+  // Parse the JWT payload to get the first_name and last_name and email values
+  var payload = JSON.parse(atob(token.split('.')[1]));
+  
+  // Get the first_name, last_name and email values
+  var firstName = payload.customer_name;
+  var lastName = payload.customer_surname;
+  var email = payload.email;
+  
+  // Set the content of the divs
+  document.getElementById("fullnameDiv").innerText = firstName + " " + lastName;
+  document.getElementById("firstnameDiv").innerText = firstName;
+  document.getElementById("lastnameDiv").innerText = lastName;
+  document.getElementById("emailDiv").innerText =  email;
 
-            // Hide loading spinner and show form
-            $("#editModalSpinner").hide();
-            $("#editCustomerForm").show();
-        },
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-            toastr.error("Error! Could not retrieve user data.");
-        }
-    });
+  function showEditDialog() {
+  // Show modal and loading spinner, hide form
+  $("#editCustomerModal").modal("show");
+  $("#editModalSpinner").show();
+  $("#editCustomerForm").hide();
+
+  // AJAX call to get the data for the user
+  $.ajax({
+      url: "rest/customers/" + localStorage.getItem('id'),
+      /*beforeSend: function (xhr) {
+          xhr.setRequestHeader("Authorization", localStorage.getItem('user_token'));
+      },*/
+      type: "GET",
+      success: function (data) {
+          // Populate the form with the returned data
+          $("#edit_first_name").val(data.customer_name);
+          $("#edit_last_name").val(data.customer_surname);
+          $("#edit_email").val(data.email);
+          $("#edit_password").val(data.password); // add password to modal form
+          
+
+          // Hide loading spinner and show form
+          $("#editModalSpinner").hide();
+          $("#editCustomerForm").show();
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+          toastr.error("Error! Could not retrieve user data.");
+      }
+  });
 }
 
 function editProfile() {
-    // Get data from form
-    let user = {
-        id: $("#userId").val(),
-        firstName: $("#editFirstName").val(),
-        lastName: $("#editLastName").val(),
-        email: $("#editEmail").val(),
+  // Get data from form
+  let user = {
+      
+      customer_name: $("#edit_first_name").val(),
+      customer_surname: $("#edit_last_name").val(),
+      email: $("#edit_email").val(),
+      password: $("#edit_password").val(),
+  };
 
-
-    };
-
-    // AJAX call to update the user
-    $.ajax({
-        url: "rest/customers/" + user.id,
-        /*beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", localStorage.getItem('user_token'));
-        },*/
-        type: "PUT",
-        data: JSON.stringify(user),
-        contentType: "application/json",
-        dataType: "json",
-        success: function (result) {
-            toastr.success("Profile has been updated successfully");
-            $("#editCustomerModal").modal("toggle");
-            // get current user details again to update the page
-        },
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-            toastr.error("Error! Profile has not been updated.");
-        }
-    });
+  // AJAX call to update the user
+  $.ajax({
+      url: "rest/customers/" + localStorage.getItem('id'),
+      /*beforeSend: function (xhr) {
+          xhr.setRequestHeader("Authorization", localStorage.getItem('user_token'));
+      },*/
+      type: "PUT",
+      data: JSON.stringify(user),
+      contentType: "application/json",
+      dataType: "json",
+      success: function (result) {
+          toastr.success("Profile has been updated successfully");
+          $("#editCustomerModal").modal("toggle");
+          // get current user details again to update the page
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+          toastr.error("Error! Profile has not been updated.");
+      }
+  });
 }
 
 
 $("#editCustomerForm").on('submit', function(e) {
-    e.preventDefault(); // prevent the default form submission
-    editProfile(); // call the function to update the profile
+  e.preventDefault(); // prevent the default form submission
+  editProfile(); // call the function to update the profile
 });
 
 
 
-
-
 jQuery.validator.addMethod(
-    "email",
-    function (value, element) {
-      return (
-        this.optional(element) ||
-        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(value)
-      );
-    },
-    "Please enter valid email address!"
-  );
-    </script>
+  "email",
+  function (value, element) {
+    return (
+      this.optional(element) ||
+      /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(value)
+    );
+  },
+  "Please enter valid email address!"
+);
+</script>
+
 
 </body>
 

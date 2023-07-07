@@ -9,8 +9,6 @@ class TestemonialsService extends BaseService{
         parent::__construct(new TestemonialsDao);
     }
 
-    public function getAllTestimonials() {
-        return $this->dao->getAllTestimonials();
-    }
+   
 }
 
