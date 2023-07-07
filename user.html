@@ -70,7 +70,7 @@
 }
 
 .title-spacing {
-  margin-right: 650px;
+  margin-right: 790px;
 }
 
 .small-button {
@@ -101,35 +101,11 @@
  <h1 class="logo me-auto me-lg-0";><a href="index2.html">DRIVENATION<span>.</span></a></h1>
   <nav id="navbar" class="navbar order-last order-lg-0">
      <ul>
-       <li><a class="nav-link scrollto" href="index.html">Home</a></li>
-       <li class="dropdown">
-         <a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
-         <ul>
-           <li><a href="index2.html#bio">Bio</a></li>
-           <li><a href="index2.html#contact">Contact</a></li>
-           <li><a href="conditions.html">Conditions</a></li>
-         </ul>
-       </li>
-       <li><a class="nav-link scrollto" href="pricing.html">Pricing</a></li>
-       <li class="dropdown">
-         <a href="#"><span>Cars</span> <i class="bi bi-chevron-down"></i></a>
-         <ul>
-           <li><a href="hatchback.html">Hatchback</a></li>
-           <li><a href="sedan.html">Sedan</a></li>
-           <li><a href="wagon.html">Wagon</a></li>
-           <li><a href="minivan.html">Minivan</a></li>
-           <li><a href="SUV.html">SUV</a></li>
-           <li><a href="electric.html">Electric</a></li>
-         </ul>
-       </li>
-       <li class="dropdown">
-         <a href="#"><span>English</span> <i class="bi bi-chevron-down"></i></a>
-         <ul>
-           <li><a href="#">Bosanski</a></li>
-           <li><a href="#">Deutsch</a></li>
-         </ul>
-       </li>
-       <li class="user-nav-link"><a class="nav-link scrollto" href="user.html">User</a></li>
+       <li><a  href="index2.html">Home</a></li>
+       <li><a href="hatchback.html">Cars</a></li>
+       <li ><a  href="conditions.html">Conditions</a></li>
+       <li class="user-nav-link"><a  href="user.html">User</a></li>
+       
      </ul>
    </nav>
    <i class="bi bi-list mobile-nav-toggle"></i>
@@ -154,12 +130,7 @@
   <div class="form-row">
     <h4 class="title title-spacing">Account Information</h4>
         <div class="button-container">
-        <button type="button"
-        onClick = "showEditDialog()"
-        class="btn btn-info btn-sm mr-2"
-        data-toggle="modal"
-        data-target="#editCustomerModal">
-        Edit profile</button>
+       
       <button type="button"
       onClick = "UserService.logout()"
       class="btn btn-danger btn-sm">
@@ -191,45 +162,56 @@
   <hr>
   </section>
 
-  <!-- Edit Profile Modal -->
-<div class="modal fade" id="editCustomerModal" tabindex="-1" role="dialog" aria-labelledby="editCustomerModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editCustomerModalLabel">Edit Profile</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="document.getElementById('editCustomerModal').style.display='none'">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="editCustomerForm">
-          <div class="form-group">
-            <label for="edit_first_name">First Name</label>
-            <input type="text" class="form-control" id="edit_first_name" placeholder="Enter First Name">
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top d-flex justify-content-center">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <p>
+                Halilovici 13<br>
+                Sarajevo, 71000<br><br>
+                <strong>Phone:</strong> +38761547895<br>
+                <strong>Email:</strong> mds@info.ba>
+              </p>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="edit_last_name">Last Name</label>
-            <input type="text" class="form-control" id="edit_last_name" placeholder="Enter Last Name">
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index2.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="user.html">User Profile</a></li>
+            </ul>
           </div>
-          <div class="form-group">
-            <label for="edit_email">Email</label>
-            <input type="email" class="form-control" id="edit_email" placeholder="Enter Email">
+          
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Offers & Rules</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="hatchback.html">Cars</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="conditions.html">Conditions</a></li>
+            </ul>
           </div>
-          <div class="form-group">
-            <label for="edit_password">Password</label>
-            <input type="string" class="form-control" id="edit_password" placeholder="Enter Password">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="small-button" data-dismiss="modal">Close</button>
-        <button type="button" class="small-button onclick="editProfile()">Save changes</button>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <div class="social-links mt-3">
+            <a href="https://twitter.com/CleverJourney/status/1673028599912464384" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="https://www.facebook.com/RentaCarINsarajevo/" target="_blank" class="facebook" ><i class="bx bxl-facebook"></i></a>
+            <a href="https://www.instagram.com/rent_a_car_as_sarajevo/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="https://www.rentalcars.com/en/city/ba/sarajevo/?affiliateCode=google&preflang=en&label=sarajevo:mdI*wP2_9zETtk9Sx6kpe0IQ:tyS:cr40425806569:pl:ta:p1:p2:ac:ap:neg:fi:tikwd-1817987514:lp20079:li:dec:dm:ws&gclid=Cj0KCQjw756lBhDMARIsAEI0AgkblDetX8-mMX5kbNVZ1vSd0T-UV58Cp0tg6lRas7jca_E9T2DB-_gaAkj1EALw_wcB" target="_blank"class="google-plus"><i class="bx bxl-skype"></i></a>
+            <a href="https://www.linkedin.com/company/rent-a-car/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          </div></div>
+
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
+          
 
+    
+  </footer><!-- End Footer -->
 
  
 <script> 
@@ -250,86 +232,7 @@
   document.getElementById("lastnameDiv").innerText = lastName;
   document.getElementById("emailDiv").innerText =  email;
 
-  function showEditDialog() {
-  // Show modal and loading spinner, hide form
-  $("#editCustomerModal").modal("show");
-  $("#editModalSpinner").show();
-  $("#editCustomerForm").hide();
-
-  // AJAX call to get the data for the user
-  $.ajax({
-      url: "rest/customers/" + localStorage.getItem('id'),
-      /*beforeSend: function (xhr) {
-          xhr.setRequestHeader("Authorization", localStorage.getItem('user_token'));
-      },*/
-      type: "GET",
-      success: function (data) {
-          // Populate the form with the returned data
-          $("#edit_first_name").val(data.customer_name);
-          $("#edit_last_name").val(data.customer_surname);
-          $("#edit_email").val(data.email);
-          $("#edit_password").val(data.password); // add password to modal form
-          
-
-          // Hide loading spinner and show form
-          $("#editModalSpinner").hide();
-          $("#editCustomerForm").show();
-      },
-      error: function (XMLHttpRequest, textStatus, errorThrown) {
-          toastr.error("Error! Could not retrieve user data.");
-      }
-  });
-}
-
-function editProfile() {
-  // Get data from form
-  let user = {
-      
-      customer_name: $("#edit_first_name").val(),
-      customer_surname: $("#edit_last_name").val(),
-      email: $("#edit_email").val(),
-      password: $("#edit_password").val(),
-  };
-
-  // AJAX call to update the user
-  $.ajax({
-      url: "rest/customers/" + localStorage.getItem('id'),
-      /*beforeSend: function (xhr) {
-          xhr.setRequestHeader("Authorization", localStorage.getItem('user_token'));
-      },*/
-      type: "PUT",
-      data: JSON.stringify(user),
-      contentType: "application/json",
-      dataType: "json",
-      success: function (result) {
-          toastr.success("Profile has been updated successfully");
-          $("#editCustomerModal").modal("toggle");
-          // get current user details again to update the page
-      },
-      error: function (XMLHttpRequest, textStatus, errorThrown) {
-          toastr.error("Error! Profile has not been updated.");
-      }
-  });
-}
-
-
-$("#editCustomerForm").on('submit', function(e) {
-  e.preventDefault(); // prevent the default form submission
-  editProfile(); // call the function to update the profile
-});
-
-
-
-jQuery.validator.addMethod(
-  "email",
-  function (value, element) {
-    return (
-      this.optional(element) ||
-      /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(value)
-    );
-  },
-  "Please enter valid email address!"
-);
+ 
 </script>
 
 
