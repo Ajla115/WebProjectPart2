@@ -55,16 +55,32 @@
       body: formData,
       headers: {'X-Requested-With': 'XMLHttpRequest'}
     })
-    .then(response => {
-      if( response.ok ) {
-        return response.text();
-      } else {
-        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
-      }
-    })
+      
+      .then(response => {
+        if( response.ok ) {
+          return response.text();
+        } else {
+          throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
+        }
+      })
     .then(data => {
       thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
+      
+
+      // Parse the response
+  let parsedData = JSON.parse(data);
+
+    // Check the status
+    if (parsedData.status === 'success') {
+      thisForm.querySelector('.sent-message').classList.add('d-block');
+      thisForm.querySelector('.sent-message').innerHTML = parsedData.response;
+      thisForm.reset(); 
+    } else {
+      throw new Error(parsedData.response ? parsedData.response : 'Form submission failed and no error message returned from: ' + action); 
+    }
+  });
+
+      /*if (data.trim() == 'OK') {
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
       } else {
@@ -73,7 +89,7 @@
     })
     .catch((error) => {
       displayError(thisForm, error);
-    });
+    });*/
   }
 
   function displayError(thisForm, error) {

@@ -30,7 +30,6 @@
 <link href="assets/css/style.css" rel="stylesheet"> 
 
 
-
 </head>
 <body>
 
@@ -195,7 +194,7 @@
         <div class="testimonials-slider swiper">
           <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
+           <!-- <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
                 <h3>Jurica Koletic</h3>
@@ -206,7 +205,7 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -219,7 +218,7 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -232,7 +231,7 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -245,7 +244,7 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -258,10 +257,10 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
           </div>
           <div class="swiper-pagination"></div>
-        </div>
+        </div>-->
 
       </div>
     </section><!-- End Testimonials Section -->
@@ -282,40 +281,18 @@
 
         <div class="container">
           <div class="row mt-5"> <!-- First row -->
-            <div class="col-lg-6 d-flex align-items-center">
+            <div class="col-lg-4"> <!-- Info column -->
               <div class="info">
                 <div class="phone">
                   <i class="bi bi-geo-fill"></i>
                   <h4>Locations:</h4>
                   <p>Halilovici 13, Sarajevo, 71000</p>
                 </div>
-              </div>
-            </div>
-        
-            <div class="col-lg-6 d-flex align-items-center">
-              <div class="info">
-                <div class="phone">
-                  <i class="bi bi-clock-fill"></i>
-                  <h4>Working hours:</h4>
-                  <p>Mon-Sun:0-24h</p>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End of first row -->
-        
-          <div class="row mt-5"> <!-- Second row -->
-            <div class="col-lg-6 d-flex align-items-center">
-              <div class="info">
                 <div class="email">
                   <i class="bi bi-envelope-at-fill"></i>
                   <h4>Email:</h4>
                   <p>MD Sarajevo: mds@info.ba</p>
                 </div>
-              </div>
-            </div>
-          
-            <div class="col-lg-6 d-flex align-items-center">
-              <div class="info">
                 <div class="phone">
                   <i class="bi bi-telephone-fill"></i>
                   <h4>Call:</h4>
@@ -323,16 +300,42 @@
                 </div>
               </div>
             </div>
-          </div> <!-- End of second row -->
-        </div> <!-- End of container -->
+        
+            <div class="col-lg-8 mt-5 mt-lg-0"> <!-- Form column -->
+              <form action="rest/mail.php" method="post" role="form" class="php-email-form">
+                <!-- Form fields and buttons here --> 
+                <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="body" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div id = "success-message" class="sent-message"></div>
+            </div>
+            <div class="text-center"><button type="submit" name="submit">Send Message</button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+  </section>
         
 
-       
-      </div>
-    </section>
     <!-- End Contact Section -->
 
   </main><!-- End #main -->
+
 
 
 
@@ -350,6 +353,7 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <!-- Template Main JS File -->
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="assets/js/highcharts.js"></script>
 <script src="assets/js/main.js"></script>
@@ -372,8 +376,12 @@
 
     };
 
+    document.getElementById("success-message").get
 
-   /* $(document).ready(function() {
+    
+ 
+
+  $(document).ready(function() {
     $.ajax({
         url: 'rest/getTestimonials',  // Replace with the URL to your getTestimonials route
         type: 'GET',
@@ -381,14 +389,14 @@
           
             let testimonials = JSON.parse(data);
             let testimonialsHtml = '';
-            testimonials.forEach(function(testimonial) {
+            testimonials.forEach(function(i,testimonial) {
               
                 testimonialsHtml += 
 
                 `<div class="swiper-slide">
                     <div class="testimonial-item">
                         <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                        <h3>${testimonial.first_name} ${testimonial.last_name}</h3>
+                        <h3>'${testimonial.first_name} ${testimonial.last_name}</h3>
                         <p>
                             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                             ${testimonial.description}
@@ -397,13 +405,14 @@
                     </div>
                 </div>`;
             });
-            $('#testimonials .swiper-wrapper').html(testimonialsHtml);  // Replace '#testimonials .swiper-wrapper' with the actual selector of your testimonials swiper container
+            $('#testimonials .swiper-wrapper').empty();
+            $('#testimonials .swiper-wrapper').append(testimonialsHtml);  // Replace '#testimonials .swiper-wrapper' with the actual selector of your testimonials swiper container
         },
         error: function(error) {
             console.log('Error:', error);
         }
     });
-});*/
+});
 
 </script>
 
