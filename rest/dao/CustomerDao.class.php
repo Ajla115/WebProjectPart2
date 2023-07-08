@@ -8,6 +8,7 @@ class CustomerDao extends BaseDao
     {
         parent::__construct("customers");
     }
+    
 
 
     // custom function, which is not present in BaseDao, that will return all information of one customer based on its name and lastname
@@ -16,5 +17,7 @@ class CustomerDao extends BaseDao
     {
         return $this->query_unique("SELECT * FROM customers WHERE customer_name = :customer_name AND customer_surname = :customer_surname", ["customer_name" => $customer_name, "customer_surname" => $customer_surname]);
     }
+
+
 }
 ?>
