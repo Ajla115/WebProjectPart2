@@ -11,6 +11,11 @@ class BaseDao
         try {
 
         $this->table_name = $table_name;
+        /*$host = '127.0.0.1';
+         $schema = 'rentacar';
+        $username = 'root';
+        $password = 'a1b2c3d4e5';
+        $port = '3306';*/
         
 
         /*After setting up the deployment on the Digital Ocean, after the finalization of the whole project, 
@@ -28,7 +33,7 @@ class BaseDao
 
         //set the PDO error mode to exception
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //echo "Connected successfully \n";
+        echo "Connected successfully";
         }
         catch(PDOException $e){
                 echo "Connection failed: " . $e->getMessage();

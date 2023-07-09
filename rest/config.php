@@ -9,7 +9,7 @@ class Config
     public static $password = '';
     public static $port = '3306';*/
 
-   /* public static $host = '127.0.0.1';
+  /* public static $host = '127.0.0.1';
     public static $schema = 'rentacar';
     public static $username = 'doadmin';
     public static $password = 'a1b2c3d4e5';
@@ -20,24 +20,24 @@ class Config
     /*ovj dio je kad se opet deploya na D.O., ako je dodano na D.O. onda ce koristiti JWT Token odatle, a ako nema tamo nista, onda ce ovu rijec web koristiti*/
 
     //This part below will be used when deploying the whole project with digital ocean
-    public static function DB_HOST(){
-        return Config::get_env("DB_HOST", "127.0.0.1");
+   public static function DB_HOST(){
+        return Config::get_env("DB_HOST", "web-project-car-rental-do-user-14056443-0.b.db.ondigitalocean.com");
     }
 
     public static function DB_USERNAME(){
-        return Config::get_env("DB_USERNAME", "root");
+        return Config::get_env("DB_USERNAME", "doadmin");
     }
 
     public static function DB_PASSWORD(){
-        return Config::get_env("DB_PASSWORD", "a1b2c3d4e5");
+        return Config::get_env("DB_PASSWORD", "AVNS_vhXlqARV1BfoeY32Gcz");
     }
 
     public static function DB_SCHEME(){
-        return Config::get_env("DB_SCHEME", "rentacar");
+        return Config::get_env("DB_SCHEME", "defaultdb");
     }
 
     public static function DB_PORT(){
-        return Config::get_env("DB_PORT", "3306");
+        return Config::get_env("DB_PORT", "25060");
     }
     public static function JWT_SECRET(){
         return Config::get_env("JWT_SECRET", "web");
