@@ -28,7 +28,28 @@
 
    <!-- Template Main CSS File -->
    <link href="assets/css/style.css" rel="stylesheet">
+<style>
+  .responsive-header {
+  font-size: 2em; 
+}
 
+@media (max-width: 600px) {
+  .responsive-header {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 400px) {
+  .responsive-header {
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 600px) {
+        h2.responsive-header {
+            font-size: 20px; /* Adjust as needed */
+        }
+    }
+</style>
  </head>
  
  <body>
@@ -83,10 +104,10 @@
 <br>
 <br>
 
-      <div class="container">
+      <div class="container" style="width: 100%; overflow: visible;">
       <div class="section-title">
       <p>RESERVATION CONFIRMATION</p>
-      <h2>Your reservation has been a success</h2>
+      <h2 class="responsive-header" style="word-wrap: break-word;">Successful Reservation</h2>
     </div>
 
     <div class="row">

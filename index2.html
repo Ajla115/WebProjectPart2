@@ -109,7 +109,7 @@
 
         <div class="row align-items-center"> <!--this allign both text and picture-->
           <div class="col-lg-6 order-1 order-lg-2 text-lg-end">
-            <img src="assets/img/clients/happycustomers.jpg"  alt="Happy employee and customers">
+            <img src="assets/img/clients/happycustomers.jpg" class="mx-auto d-block" alt="Happy employee and customers">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
@@ -138,20 +138,21 @@
      <section id="clients" class="clients">
       <div class="container">
 
-        <div class="section-title">
+        <div class="section-title"">
           <p >Our partners</p>
         </div>
 
     <div class="clients-slider swiper">
       <div class="swiper-wrapper align-items-center">
-        <div class="swiper-slide"><img src="assets/img/clients/Land_Rover.svg.png"  class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/volvo.png"class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/hyndai-removebg-preview.png"class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/BMW.png" style="width:116px;height:70px;" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/toyota.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/SKODA.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/kia.png" style="width: 350px;height:100px;"  class="img-fluid" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/Land_Rover.svg.png"  class="img-fluid" alt="Land_Rover"></div>
+        <div class="swiper-slide"><img src="assets/img/clients/volvo.png"class="img-fluid" alt="Volvo"></div>
+        <div class="swiper-slide"><img src="assets/img/clients/hyndai-removebg-preview.png"class="img-fluid" alt="Hyndai"></div>
+        <div class="swiper-slide"><img src="assets/img/clients/BMW.png" style="width:116px;height:70px;" class="img-fluid" alt="BMW"></div>
+        <div class="swiper-slide"><img src="assets/img/clients/toyota.png" class="img-fluid" alt="Toyota"></div>
+        <div class="swiper-slide"><img src="assets/img/clients/SKODA.png" class="img-fluid" alt="Skoda"></div>
+        <div class="swiper-slide"><img src="assets/img/clients/kia.png" style="width: 350px;height:100px;"  class="img-fluid" alt="Kia"></div>
         <div class="swiper-slide"><img src="assets/img/citroen.png"  class="img-fluid" alt="citroen"></div>
+
       </div>
       <br>
       <div class="swiper-pagination"></div>
@@ -192,7 +193,7 @@
       <div class="container">
 
         <div class="testimonials-slider swiper">
-          <div class="swiper-wrapper"></div>
+          <div class="swiper-wrapper" id="comments-swiper"></div>
 
             <div class="swiper-pagination"></div>
 
@@ -309,7 +310,7 @@
       
    } else {
 
-      window.location.replace("index2.html"); //ovo ovdje ovako da stoji
+      window.location.replace("index.html"); //ovo ovdje ovako da stoji
 
     };
 
@@ -325,7 +326,7 @@
         console.log(data);
         for (var i = 0; i < data.length; i++) {
             var fullname = data[i].first_name + " " + data[i].last_name;
-            $('.swiper-wrapper').append(
+            $("#comments-swiper").append(
                 '<div class="swiper-slide">' +
                     '<p style="color: white; text-align: center;"><strong>' + fullname + '</strong></p>' +
                     '<p style="color: white; text-align: center;"><i class="bx bxs-quote-alt-left quote-icon-left"></i>' + 

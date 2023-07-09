@@ -88,6 +88,18 @@
   background-color: #0056b3;
 }
 
+.img-container {
+  width: 100%; /* or you can set it to a certain percentage if you don't want it to take the full width */
+  max-width: 120px; /* set this to the original width of your image */
+  margin: 0 auto; /* this will center your image */
+}
+
+.user-logo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
  </style>
 
@@ -110,10 +122,9 @@
    </nav>
    <i class="bi bi-list mobile-nav-toggle"></i>
 
-   <!-- end of navigation -->
+   
     </div>
   </header>
-  <!-- End Header -->
 
 <!--The main part-->
 <section id="user">
@@ -123,7 +134,9 @@
 
 <div class="container">
   <div class="section-title d-flex justify-content-center align-items-center flex-column">
-    <img src="assets/img/userIcon.png" alt="User profile icon" class="img-fluid section-title user-logo">
+    <div class="img-container">
+      <img src="assets/img/userIcon.png" alt="User profile icon" class="img-fluid user-logo">
+    </div>
     <h3 class="user-name" id="fullnameDiv"></h3>
   </div>
   <br>
