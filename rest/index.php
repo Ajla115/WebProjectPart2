@@ -118,6 +118,8 @@ Flight::route('GET /docs.json', function(){
 
 
 
+
+
 // import all routes
 require_once __DIR__ . '/routes/CustomerRoutes.php';
 require_once __DIR__ . '/routes/BookingRoutes.php';
