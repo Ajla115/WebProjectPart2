@@ -24,7 +24,7 @@ class BaseDao
         $username = Config::DB_USERNAME();
         $password = Config::DB_PASSWORD();
         $schema = Config::DB_SCHEME();
-        $port = Config::DB_HOST();
+        $port = Config::DB_PORT();
 
         $this->conn = new PDO("mysql:host=$host;port=$port;dbname=$schema", $username, $password); 
 
