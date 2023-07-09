@@ -192,75 +192,11 @@
       <div class="container">
 
         <div class="testimonials-slider swiper">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper"></div>
 
-           <!-- <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Jurica Koletic</h3>
-                <h4>Lawyer</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Great rental experience. The staff was friendly and helpful, and the car was in excellent condition. Highly recommended.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
+            <div class="swiper-pagination"></div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Amani Begic</h3>
-                <h4>Designer</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  As a foreign resident, I had an excellent rental experience. The process was quick, the car was clean and well-maintained.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Lamija Kolic</h3>
-                <h4>TV Host</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I rented a car for a weekend getaway and was impressed with the affordable rates and variety of vehicle options. Will definitely use this rental company again.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Damir Hodzic</h3>
-                <h4>Company Manager</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  The customer service was exceptional! The staff went above and beyond to accommodate my needs and ensure a smooth rental experience.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>Sead Ramic</h3>
-                <h4>Economist</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I had a last-minute change of plans and needed a rental car ASAP. This company was able to accommodate my request and provide excellent service and help despite the short notice. Thank you!
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>-->
+           
 
       </div>
     </section><!-- End Testimonials Section -->
@@ -378,24 +314,32 @@
     };
 
     document.getElementById("success-message").get
-
-    
  
 
-  $(document).ready(function() {
 
     $.ajax({
     url: 'rest/tests',
     type: 'GET',
-    success: function(data) {
-        // Here, append your data to the Swiper slides
-        data.forEach(item => {
-            // Make sure to adapt this line to match your data structure and your HTML needs
-            $('.swiper-wrapper').append('<div class="swiper-slide">' + item + '</div>');
-        });
-        // After the slides have been appended, then you can initialize the Swiper
-        var swiper = new Swiper('.swiper-container', {
-            // Swiper settings here
+    dataType: 'json',
+    success: function(data) { 
+        console.log(data);
+        for (var i = 0; i < data.length; i++) {
+            var fullname = data[i].first_name + " " + data[i].last_name;
+            $('.swiper-wrapper').append(
+                '<div class="swiper-slide">' +
+                    '<p style="color: white; text-align: center;"><strong>' + fullname + '</strong></p>' +
+                    '<p style="color: white; text-align: center;"><i class="bx bxs-quote-alt-left quote-icon-left"></i>' + 
+                    data[i].comment + 
+                    '<i class="bx bxs-quote-alt-right quote-icon-right"></i></p>' +
+                '</div>'
+            );
+        }
+
+        var swiper = new Swiper('.testimonials-slider', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
         });
     },
     error: function(error) {
@@ -403,39 +347,6 @@
     }
 });
 
-
-
-    /*$.ajax({
-        url: 'rest/tests',  // Replace with the URL to your getTestimonials route
-        type: 'GET',
-        success: function(data) {
-          
-            let testimonials = JSON.parse(data);
-            let testimonialsHtml = '';
-            testimonials.forEach(function(i,testimonial) {
-              
-                testimonialsHtml += 
-
-                `<div class="swiper-slide">
-                    <div class="testimonial-item">
-                        <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                        <h3>'${testimonial.first_name} ${testimonial.last_name}</h3>
-                        <p>
-                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                            ${testimonial.description}
-                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                        </p>
-                    </div>
-                </div>`;
-            });
-            $('#testimonials .swiper-wrapper').empty();
-            $('#testimonials .swiper-wrapper').append(testimonialsHtml);  // Replace '#testimonials .swiper-wrapper' with the actual selector of your testimonials swiper container
-        },
-        error: function(error) {
-            console.log('Error:', error);
-        }
-    });*/
-});
 
 </script>
 

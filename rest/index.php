@@ -81,7 +81,7 @@ Flight::register('userDao', "UserDao");
       }
   }
 });*/
-Flight::route('/*', function(){
+/*Flight::route('/*', function(){
   // Perform JWT decode
   $path = Flight::request()->url;
   if ($path == '/login' || $path == '/customers' || $path == '/docs.json') return true;
@@ -105,7 +105,7 @@ Flight::route('/*', function(){
       return false;
     }
   }
-});
+});*/
 
 
 
