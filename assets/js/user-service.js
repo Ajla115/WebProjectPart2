@@ -1,10 +1,11 @@
 var UserService = {
     init: function () {
       
-      var token = localStorage.getItem("user_token"); //ako hocemo da settamo value umjesto da je retrieve, onda treba ovako setItem("user_token", value);
-      if (token) { //if token exists, onda ide redirect na ovaj html page
+      var token = localStorage.getItem("user_token"); //if we want to set a value, rather than retireve it then write setItem("user_token", value);
+      if (token) {                                    //if token exists, then redirect to html page
         window.location.replace("index2.html");
       }
+
       $("#login-form").validate({
         
         submitHandler: function (form) {
@@ -29,7 +30,7 @@ var UserService = {
         dataType: "json",
         success: function (result) {
           console.log(result);
-          localStorage.setItem("user_token", result.token); //ovo user_token je kako smo mi dali ime tokenu
+          localStorage.setItem("user_token", result.token); //this "user_token" is how we have named our token
           window.location.replace("index2.html");
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -38,12 +39,31 @@ var UserService = {
       });
     },
   
-    logout: function () {   //ovo je logout function, jako simple
+    logout: function () {   //this is a logout function
       localStorage.clear();
       window.location.replace("index.html");
     },
+
+    getUserInformation: function(){
+      // Retrieve the JWT payload from local storage
+    var token = localStorage.getItem('user_token');
+    
+    // Parse the JWT payload to get the first_name and last_name and email values
+    var payload = JSON.parse(atob(token.split('.')[1]));
+    
+    // Get the first_name, last_name and email values
+    var firstName = payload.customer_name;
+    var lastName = payload.customer_surname;
+    var email = payload.email;
+    
+    // Set the content of the divs
+    document.getElementById("fullnameDiv").innerText = firstName + " " + lastName;
+    document.getElementById("firstnameDiv").innerText = firstName;
+    document.getElementById("lastnameDiv").innerText = lastName;
+    document.getElementById("emailDiv").innerText =  email;
+    }
   };
 
-  //za logout treba samo staviti Button onClick = UserService.logout i tjt
+  //for logout, you will need to put button with onclick = UserService.logout()
 
 

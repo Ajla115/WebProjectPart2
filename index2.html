@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicon -->
-  <link href="assets/img/car_favicon.png" rel="icon">
+  <link href="assets/img/car-icon.png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -294,12 +294,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="assets/js/highcharts.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/customer-service.js"></script>
 
 
 <script>
 
+  CustomerService.checkToken();
+
+  CustomerService.getComments();
+
   //ovo je u slucaju da nemamo token, znaci da nam ne da dalje nastaviti, vec vraca na pocetnu stranicu
-     var token = localStorage.getItem("user_token");
+     /*var token = localStorage.getItem("user_token");
      if (token) {
 
         //var user = Utils.parseJwt(token); da li treba ovo ako je jedan user, da nema ono da se bira user ili admin
@@ -314,13 +319,19 @@
 
     };
 
-    document.getElementById("success-message").get
+   // document.getElementById("success-message").get
  
 
 
     $.ajax({
     url: 'rest/tests',
     type: 'GET',
+    beforeSend: function (xhr) {
+              xhr.setRequestHeader(  //ovaj dio sa beforeSend je potreban za tokene
+                "Authorization",
+                  localStorage.getItem("user_token")
+              );
+            },
     dataType: 'json',
     success: function(data) { 
         console.log(data);
@@ -346,7 +357,7 @@
     error: function(error) {
         console.error('Error:', error);
     }
-});
+});*/
 
 
 </script>

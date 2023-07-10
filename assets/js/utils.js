@@ -1,6 +1,6 @@
-//ovdje pisem metode koje se ponavljaju, a nisu ni zasto direktno vezane
-//ne zaboraviti ove objekta na vrhu pisati!!!!!
-/*var Utils = {
+//here, you write methods that repeat, but are not related to anything in specific
+//don't forget to declare and initliaze objects at the top!!!!!
+var Utils = {
     password_toggle: function(){
         //ovo je da se vidi sifra ili da se ne vidi
         const togglePassword = document.querySelector('#togglePassword');
@@ -15,6 +15,26 @@
       // Toggle the eye icon
       togglePassword.classList.toggle('bi-eye');});
 
+    },
+
+    toaster: function(){
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "500",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+          }
     }
 
-}*/
+}

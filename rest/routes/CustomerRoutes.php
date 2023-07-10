@@ -59,7 +59,7 @@ Flight::route('GET /customers/@id', function ($id) {
 
 //works
 //add a new customer to the database
-Flight::route('POST /customers', function () {
+Flight::route('POST /customer', function () {
     $data = Flight::request()->data->getData();
 
     // Add the customer to the database

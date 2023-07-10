@@ -43,7 +43,7 @@ Flight::register('userDao', "UserDao");
     //ovo customers se odnosi na signup 
 
    $headers = getallheaders();
-    Flight::json(['headers' => $headers]);
+    //Flight::json(['headers' => $headers]);
     if (@!$headers['Authorization']){
       Flight::json(["message" => "Authorization is missing"], 403);
       return FALSE;
@@ -57,8 +57,8 @@ Flight::register('userDao', "UserDao");
         return FALSE;
       }
     }
-  });
-*/
+  });*/
+
 /*Flight::route('/*', function(){
   // Perform JWT decode
   $path = Flight::request()->url;

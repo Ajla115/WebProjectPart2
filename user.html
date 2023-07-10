@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/car_favicon.png" rel="icon">
+  <link href="assets/img/car-icon.png" rel="icon">
 
 
   <!-- Google Fonts -->
@@ -50,7 +50,6 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/user-service.js"></script>
 
- 
 
  <style>
 .user-nav-link {
@@ -228,8 +227,11 @@
 
  
 <script> 
+
+UserService.getUserInformation();
+
   // Retrieve the JWT payload from local storage
-  var token = localStorage.getItem('user_token');
+ /* var token = localStorage.getItem('user_token');
   
   // Parse the JWT payload to get the first_name and last_name and email values
   var payload = JSON.parse(atob(token.split('.')[1]));
@@ -243,7 +245,7 @@
   document.getElementById("fullnameDiv").innerText = firstName + " " + lastName;
   document.getElementById("firstnameDiv").innerText = firstName;
   document.getElementById("lastnameDiv").innerText = lastName;
-  document.getElementById("emailDiv").innerText =  email;
+  document.getElementById("emailDiv").innerText =  email;*/
 
  
 </script>
