@@ -1,8 +1,7 @@
 //inside of this JSON object, we will put methods for ADD,
-// DELETE, EDIT, showconfirmationDialog and etc
+//DELETE, EDIT, showconfirmationDialog and etc
 var CustomerService = {
  
-
   emailValidator: function() {
       jQuery.validator.addMethod(
           "email",
@@ -28,7 +27,7 @@ var CustomerService = {
   },
 
   validateForm: function() {
-      var self = this; // reference to the CustomerService object for using in nested functions
+      var self = this; // this is a reference to the CustomerService object for using in nested functions
       $("#addCustomerForm").validate({
         focusCleanup: true,
           errorElement: "em",
@@ -63,33 +62,29 @@ var CustomerService = {
 
 
           submitHandler: function (form, validator) {
-              const data = self.formToJson(form);  // Use self instead of this here
+            const data = self.formToJson(form);  // this self is refering to this JS object
               
             console.log("test", typeof data);
     
             $.post(" rest/customer", data)
               .done(function (response) {
 
-        
-  const token = response.token;
-  const customer = response.customer;
-  
-  // Store the JWT token in localStorage
-  localStorage.setItem('user_token', token);
+                const token = response.token;
+                const customer = response.customer;
+                // Storing the JWT token in localStorage
+                localStorage.setItem('user_token', token);
+                toastr.success("User added to the database");
+                form.reset();
 
-        toastr.success("User added to the database");
-        form.reset();
-        setTimeout(function() {
-    window.location.href = 'index2.html';
- }, 5000); // Redirect after 5 seconds
-      })
-      .fail(function () {
-        toastr.error("User not added");
-      });
-    },
+             setTimeout(function() {
+                 window.location.href = 'index2.html';}, 5000); // Redirect after 5 seconds to index2.html
+             })
+            .fail(function () {
+                  toastr.error("User not added");
+                });
+             },
           
-
-          invalidHandler: function (event, validator) {
+            invalidHandler: function (event, validator) {
             var errors = validator.numberOfInvalids();
             toastr.error("Error");
             if (errors) {
@@ -102,9 +97,10 @@ var CustomerService = {
             } else {
               $("div.error").hide();
             }
-      }, // the closing bracket was missing here
-      });
-     }, // the closing bracket was missing here, and also added comma for separating methods in an object
+          }, 
+        });
+     }, 
+
 
   init: function() {
       this.emailValidator();
@@ -112,8 +108,8 @@ var CustomerService = {
   },
 
 
-    checkToken: function() {
-        var token = localStorage.getItem("user_token");
+  checkToken: function() {
+      var token = localStorage.getItem("user_token");
         if (token) {
             
         } else {

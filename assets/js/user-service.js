@@ -2,7 +2,7 @@ var UserService = {
     init: function () {
       
       var token = localStorage.getItem("user_token"); //if we want to set a value, rather than retireve it then write setItem("user_token", value);
-      if (token) {                                    //if token exists, then redirect to html page
+      if (token) {                                    //if token exists, then redirect to index2.html page
         window.location.replace("index2.html");
       }
 
@@ -15,6 +15,7 @@ var UserService = {
         },
       });
     },
+
     login: function (entity) {
       $.ajax({
         url: "rest/login",
@@ -45,18 +46,18 @@ var UserService = {
     },
 
     getUserInformation: function(){
-      // Retrieve the JWT payload from local storage
+    // Retrieving the JWT payload from local storage
     var token = localStorage.getItem('user_token');
     
-    // Parse the JWT payload to get the first_name and last_name and email values
+    // Parsing the JWT payload to get the first_name and last_name and email values
     var payload = JSON.parse(atob(token.split('.')[1]));
     
-    // Get the first_name, last_name and email values
+    // Getting the first_name, last_name and email values
     var firstName = payload.customer_name;
     var lastName = payload.customer_surname;
     var email = payload.email;
     
-    // Set the content of the divs
+    // Setting the content of the divs of the user.html
     document.getElementById("fullnameDiv").innerText = firstName + " " + lastName;
     document.getElementById("firstnameDiv").innerText = firstName;
     document.getElementById("lastnameDiv").innerText = lastName;

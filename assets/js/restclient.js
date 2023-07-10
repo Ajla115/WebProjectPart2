@@ -4,7 +4,7 @@
             url: "rest/" + url,
             type: "GET",
             beforeSend: function (xhr) {
-              xhr.setRequestHeader(  //ovaj dio sa beforeSend je potreban za tokene
+              xhr.setRequestHeader(  //this part beforeSend is needed for tokens
                 "Authorization",
                   localStorage.getItem("user_token")
               );
