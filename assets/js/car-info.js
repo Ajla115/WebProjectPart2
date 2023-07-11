@@ -17,7 +17,7 @@ var CarService = {
                 self.showToast('Please fill in all fields'); // change this line
             } else {
                 // All fields filled, redirect to reservation.html
-                window.location.href = 'reservation.html';
+                window.location.href = '#reservation';
             }
         });
     },
