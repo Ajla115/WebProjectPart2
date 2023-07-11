@@ -51,6 +51,7 @@ var UserService = {
     
     // Parsing the JWT payload to get the first_name and last_name and email values
     var payload = JSON.parse(atob(token.split('.')[1]));
+    //1 is payload and that will become JSON object
     
     // Getting the first_name, last_name and email values
     var firstName = payload.customer_name;

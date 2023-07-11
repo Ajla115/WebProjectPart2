@@ -1,6 +1,6 @@
 var CarService = {
     processPayment: function() {
-        var self = this; // add this line
+        var self = this; 
         document.getElementById('paymentForm').addEventListener('submit', function(event) {
             event.preventDefault();
 

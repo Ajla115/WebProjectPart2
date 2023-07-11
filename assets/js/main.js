@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (inputValue.length > 0) {
       inputValue = inputValue.match(/.{1,4}/g).join(' '); // Add spacing every 4 characters
+      //breakit into groups of 1 to 4 characters, creating an array of those groups, and then joining the array elements with a space.
     }
 
     event.target.value = inputValue.slice(0, 20); // Limit input to 20 characters
