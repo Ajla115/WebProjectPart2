@@ -34,7 +34,7 @@ Flight::route('GET /customers/@id', function ($id) {
 
  /**
 * @OA\Post(
-*     path="/customers", security={{"ApiKeyAuth": {}}},
+*     path="/customer", security={{"ApiKeyAuth": {}}},
 *     description="Add customer",
 *     tags={"customers"},
 *     @OA\RequestBody(description="Add new customer", required=true,
