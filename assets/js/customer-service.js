@@ -77,7 +77,7 @@ var CustomerService = {
                 form.reset();
 
              setTimeout(function() {
-                 window.location.href = 'index2.html';}, 5000); // Redirect after 5 seconds to index2.html
+                 window.location.href = '../index2.html';}, 5000); // Redirect after 5 seconds to index2.html
              })
             .fail(function () {
                   toastr.error("User not added");
