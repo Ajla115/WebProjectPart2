@@ -38,7 +38,7 @@ var CarService = {
 
     getCarInfo: function(id) {
         $.ajax({
-            url: '../rest/carinfo/' + id,
+            url: './rest/carinfo/' + id,
             type: 'GET',
             beforeSend: function(xhr) {
                 xhr.setRequestHeader("Authorization", localStorage.getItem("user_token"));
@@ -80,7 +80,7 @@ var CarService = {
 
    getReview: function(id) {
         $.ajax({
-            url: '../rest/tests/' + id,
+            url: './rest/tests/' + id,
             type: 'GET',
             beforeSend: function(xhr) {
                 xhr.setRequestHeader("Authorization", localStorage.getItem("user_token"));

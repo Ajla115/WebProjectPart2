@@ -2,14 +2,27 @@
 # Generalne stvari
 --------------------------------------------------------------*/
 
-/*USER.HTML CSS*/
-#title-spacing {
-  margin-right: 790px;
+/*button za usera*/
+.small-button {
+  padding: 5px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: #007BFF;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.small-button:hover {
+  background-color: #0056b3;
 }
 
 
 .button-container {
-  display: flex;
+  width: 100px;
+ 
+  
 }
 
 /*CSS ZA HIGHCHARTS*/
@@ -973,7 +986,7 @@ color: #000000;
   width: 100.49px;
   height: 0px;
   left: 146.51px;
-  top: 779px;
+  top: 799px;
   
   border: 1px solid #0BB5FF;
 
@@ -1013,7 +1026,7 @@ color: #000000;
     width: 300.49px;
     height: 0px;
     left: 86.51px;
-    top: 936.5px;
+    top: 1140.5px;
     border: 1px solid #0BB5FF;
   }
 }
@@ -1042,7 +1055,7 @@ color: #000000;
   width: 371.49px;
   height: 0px;
   left: 196.51px;
-  top: 163px;
+  top: 183px;
   
   border: 1px solid #0BB5FF;
 
@@ -1064,7 +1077,7 @@ color: #000000;
     width: 200.5px;
     height: 0.53px;
     left: 101px;
-    top: 122.5px;
+    top: 142.5px;
     
     
   }
@@ -1088,6 +1101,7 @@ color: #000000;
   background-position: center;
   height: 100vh;
   position: relative;
+  top: -180px;
 }
  
 #hatch:before {
@@ -2168,7 +2182,7 @@ color: #000000;
 width: 371px;
 height: 0px;
 left: 178px;
-top: 747px;
+top: 767px;
 
 border: 1px solid #1887C7;
 
@@ -2188,7 +2202,7 @@ border: 1px solid #1887C7;
     width: 221px;
     height: 0px;
     left: 72px;
-    top: 902px;
+    top: 922px;
 
   }
 }
@@ -3851,6 +3865,7 @@ flex-grow: 0;
   background-position: center;
   height: 100vh;
   position: relative;
+  top: -60px;
    
 }
 
@@ -3955,7 +3970,7 @@ color: #000000;
   width: 371.49px;
   height: 0px;
   left: 133.51px;
-  top: 163px;
+  top: 183px;
   
   border: 1px solid #0BB5FF;
 
@@ -4090,7 +4105,7 @@ color: #000000;
         width: 282.5px;
         height: 0.53px;
         left: 62px;
-        top: 122.5px;
+        top: 142.5px;
         
         
       }
@@ -8688,7 +8703,7 @@ color: #000000;
   width: 371.02px;
   height: 0px;
   left: 424px;
-  top: 1086px;
+  top: 1110px;
   
   border: 1px solid #1887C7;
 
@@ -8708,7 +8723,7 @@ position: absolute;
 width: 360px;
 height: 584px;
 left: 533px;
-top: 1150px;
+top: 1180px;
 
 background: #FFFFFF;
 box-shadow: 0px 4px 20px rgba(77, 166, 186, 0.38);
@@ -8763,7 +8778,7 @@ flex-grow: 0;
 
 .MinivanPaymentInfoNameContainer {
   position: absolute;
-  top: 156px;
+  top: 166px;
   left: 30px;
   box-sizing: border-box;
   display: flex;
@@ -8823,7 +8838,7 @@ flex-grow: 0;
 
   .MinivanPaymentInfoCardContainer {
     position: absolute;
-    top: 254px;
+    top: 264px;
     left: 30px;
     display: flex;
     flex-direction: row;
@@ -9053,7 +9068,7 @@ flex-grow: 0;
 .MinivanPaymentButton h1{
 
 position: absolute;
-top: 3px;
+top: -15px;
 left: 54px;
 width: 192px;
 height: 30px;
@@ -9097,7 +9112,8 @@ flex-grow: 0;
   width: 39px;
   
 
-background: #ffffff;
+  background-image: url(LogoPayment.png);
+  background-size: cover;
 
 
 
@@ -9578,7 +9594,7 @@ background: #ffffff;
         width: 102px;
         height: 0px;
         left: 261px;
-        top: 1622px;
+        top: 1642px;
     
       }
     }
@@ -13195,6 +13211,7 @@ flex-grow: 0;
   background: url("../img/backgrounf_picture_web.jpg") center;
   background-size: cover;
   position: relative;
+  top: -60px;
 }
 #hero:before {
   content: "";

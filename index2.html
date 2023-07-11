@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>driveNation</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -25,254 +24,139 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> <!--potrebno za carrousel-->
 
+  <!-- Custom CSS -->
+  <link href="assets/css/style.css" rel="stylesheet"> 
+ <!-- SPApp CSS -->
+ <link href="assets/css/jQuerySPApp.css" rel="stylesheet">
+
+
+  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css">
+
+
 
 <!-- Template Main CSS File -->
+<link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+   
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"
+    ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+    <script src="assets/js/utils.js"></script>
+  
+
+
 <link href="assets/css/style.css" rel="stylesheet"> 
 
 
 </head>
+
+
+  
+    
+  
 <body>
+<!-- ======= Header/Navigation Menu ======= -->
+<header id="header" class="fixed-top header-inner-pages">
+  <div class="container d-flex align-items-center justify-content-lg-between">
+    <h1 class="logo me-auto me-lg-0">
+      <a href="index2.html">DRIVENATION<span>.</span></a>
+    </h1>
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <input type="checkbox" id="navbar-toggle" class="navbar-toggle">
+      <label for="navbar-toggle" class="navbar-toggle-label">
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+        <span class="hamburger-icon"></span>
+        
+      </label>
+      <ul class="navbar-menu">
+        <li><a href="#index22">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cars</a>
+          <ul class="dropdown-menu">
+            <li><a href="#hatchback">Hatchback</a></li>
+            <li><a href="#Sedan">Sedan</a></li>
+          </ul>
+        </li>
+        <li><a href="#conditions">Conditions</a></li>
+        <li class="user-nav-link"><a href="#user">User</a></li>
+      </ul>
+    </nav>
+  </div>
 
-  <!-- ======= Header/Navigation Menu ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center justify-content-lg-between">
+</header>
 
-    <h1 class="logo me-auto me-lg-0";><a href="index2.html">DRIVENATION<span>.</span></a></h1>
-     <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto" href="#hero">Home</a></li>
-          <li class="dropdown">
-            <a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a class="nav-link scrollto" href="#bio">Bio</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="conditions.html">Conditions</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="pricing.html">Pricing</a></li>
-          <li class="dropdown">
-            <a href="#"><span>Cars</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="hatchback.html">Hatchback</a></li>
-              <li><a href="sedan.html">Sedan</a></li>
-              <li><a href="wagon.html">Wagon</a></li>
-              <li><a href="minivan.html">Minivan</a></li>
-              <li><a href="SUV.html">SUV</a></li>
-              <li><a href="electric.html">Electric</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#"><span>English</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Bosanski</a></li>
-              <li><a href="#">Deutsch</a></li>
-            </ul>
-          </li>
-          <li class="user-nav-link"><a class="nav-link scrollto" href="user.html">User</a></li>
-
-        </ul>
-      </nav>
-      <i class="bi bi-list mobile-nav-toggle"></i>
-
-      <!-- end of navigation -->
-
-    </div>
-  </header>
   <!-- End Header -->
 
-  <!-- ======= Part with title and subtitle ======= -->
 
-      <section id="hero" class="d-flex align-items-center justify-content-center">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-8">
-              <h1 class="hero-heading">Explore the nation & drive with pride<span>.</span></h1>
-              <h2 class="hero-subheading">Make your travel unforgettable</h2>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-  <!-- End of  Part with  title and subtitle  -->
-
-  <main id="main">
-
-   <!-- ======= Bio Section ======= -->
-    <section id="bio" class="bio">
-      <div class="container">
-  
-        <div class="section-title">
-          <p >Bio</p>
-          <h2>Get to know us</h2>
-        </div>
- 
-
-        <div class="row align-items-center"> <!--this allign both text and picture-->
-          <div class="col-lg-6 order-1 order-lg-2 text-lg-end">
-            <img src="assets/img/clients/happycustomers.jpg" class="mx-auto d-block" alt="Happy employee and customers">
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <h4><b>Welcome to driveNation, where customer satisfaction is our #1 priority.</b></h4>
-            <p class="fst-italic">
-              We pride ourselves on our attention to detail, commitment to safety, and dedication to customer satisfaction. So why choose us?
-            </p>
-            <ul>
-              <li> Reputation built on dedication and hard work.</li>
-              <li> Countless satisfied customers demonstrate our trustworthiness.</li>
-              <li>Years of experience to find the most suitable solution for your needs.</li>
-            </ul>
-            <p allign = "justify-content-lg-between">
-              Personalized attention and top-notch service for every client is our moto. 
-              Our employees are always available to answer your questions and find the perfect rental solution. 
-            </p>
-            <p><b>Let's make your next rental a success.</b> </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <!-- End Bio Section -->
-
-     <!-- ======= Partners Section ======= -->
-     <section id="clients" class="clients">
-      <div class="container">
-
-        <div class="section-title">
-          <p >Our partners</p>
-        </div>
-
-    <div class="clients-slider swiper">
-      <div class="swiper-wrapper align-items-center">
-        <div class="swiper-slide"><img src="assets/img/clients/Land_Rover.svg.png"  class="img-fluid" alt="Land_Rover"></div>
-        <div class="swiper-slide"><img src="assets/img/clients/volvo.png"class="img-fluid" alt="Volvo"></div>
-        <div class="swiper-slide"><img src="assets/img/clients/hyndai-removebg-preview.png"class="img-fluid" alt="Hyndai"></div>
-        <div class="swiper-slide"><img src="assets/img/clients/BMW.png" style="width:116px;height:70px;" class="img-fluid" alt="BMW"></div>
-        <div class="swiper-slide"><img src="assets/img/clients/toyota.png" class="img-fluid" alt="Toyota"></div>
-        <div class="swiper-slide"><img src="assets/img/clients/SKODA.png" class="img-fluid" alt="Skoda"></div>
-        <div class="swiper-slide"><img src="assets/img/clients/kia.png" style="width: 350px;height:100px;"  class="img-fluid" alt="Kia"></div>
-        <div class="swiper-slide"><img src="assets/img/citroen.png"  class="img-fluid" alt="citroen"></div>
-
-      </div>
-      <br>
-      <div class="swiper-pagination"></div>
-    </div>
-
-  </div>
-</section>
-<!-- End Partners Section -->
+  <main id="jqueryspapp" role="main">
+    <section id="index22" data-load="index22.html" ></section>
+    <section id="hatchback" data-load="hatchback.html" ></section>
+    <section id="Sedan" data-load="Sedan.html" ></section>
+    <section id="conditions" data-load="conditions.html" ></section>
+    <section id="user" data-load="user.html" ></section>
+    <section id="volkswagen7detail" data-load="volkswagen7detail.html" ></section>
+    <section id="reservation" data-load="reservation.html" ></section>
+    <section id="SkodaDetail" data-load="SkodaDetail.html" ></section>
+    <section id="SkodaDetail" data-load="SkodaDetail.html" ></section>
 
 
-<!-- ======= HighChart Section ======= -->
-    <section id="features" class="features">
-      <div class="container">
-
-        <div class="section-title">
-          <p >Popularity</p>
-          <h2>See our yearly increase in customers</h2>
-        </div>
-
-        <figure class="highcharts-figure">
-          <div id="container"></div>
-          
-      </figure>
-
-
-<div class="section-title">
-          <p >Feedback</p>
-          <h2>Comments of satisfied customers</h2>
-        </div>
-       
-      </div></div>
-      
-    </section>
-<!-- End Highcharts Section -->
+  </main>
 
   
-<!-- ======= Testimonials Section ======= -->
-
-<section id="testimonials" class="testimonials">
-      <div class="container">
-
-        <div class="testimonials-slider swiper">
-          <div class="swiper-wrapper" id="comments-swiper"></div>
-
-            <div class="swiper-pagination"></div>
-
-           
-
-      </div>
-    </section>
-<!-- End Testimonials Section -->
 
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
 
-        <div class="section-title">
-          <p>Contact </p>
-          <h2>Contact Us</h2>
-        </div>
 
-        <div>
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464440.206604677!2d19.337019008921608!3d44.6763937549128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758cbb1ed719bd1%3A0x562ecda6de87b33e!2sSarajevo!5e0!3m2!1shr!2sba!4v1683577983251!5m2!1shr!2sba" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="container">
-          <div class="row mt-5"> <!-- First row -->
-            <div class="col-lg-4"> <!-- Info column -->
-              <div class="info">
-                <div class="phone">
-                  <i class="bi bi-geo-fill"></i>
-                  <h4>Locations:</h4>
-                  <p>Halilovici 13, Sarajevo, 71000</p>
-                </div>
-                <div class="email">
-                  <i class="bi bi-envelope-at-fill"></i>
-                  <h4>Email:</h4>
-                  <p>MD Sarajevo: mds@info.ba</p>
-                </div>
-                <div class="phone">
-                  <i class="bi bi-telephone-fill"></i>
-                  <h4>Call:</h4>
-                  <p>MD Sarajevo: +38761547895</p>
-                </div>
-              </div>
-            </div>
-        
-            <div class="col-lg-8 mt-5 mt-lg-0"> <!-- Form column -->
-              <form action="rest/mail.php" method="post" role="form" class="php-email-form">
-                <!-- Form fields and buttons here --> 
-                <div class="row">
-              <div class="col-md-6 form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-              </div>
-              <div class="col-md-6 form-group mt-3 mt-md-0">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-            </div>
-            <div class="form-group mt-3">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group mt-3">
-              <textarea class="form-control" name="body" rows="5" placeholder="Message" required></textarea>
-            </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div id = "success-message" class="sent-message"></div>
-            </div>
-            <div class="text-center"><button type="submit" name="submit">Send Message</button></div>
-              </form>
-            </div>
-          </div>
-        </div>
-
-  </section>
-  <!-- End Contact Section -->
-
-  </main><!-- End #main -->
 
 <!-- Vendor JS Files -->
 <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -292,15 +176,35 @@
 <script src="assets/js/highcharts.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/customer-service.js"></script>
+<script src="assets/js/jQuerySPApp.js"></script>
+<script src="assets/css/jQuerySPApp.css"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="assets/js/jQuerySPApp.js"></script>
+
+
+
+
+<!-- SPApp JS -->
+<script src="assets/js/jQuerySPApp.js"></script>
+
+
+<!-- Toastr JS -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script src="./assets/js/utils.js"></script>
+<script src="./assets/js/restClient.js"></script>
+<script src="./assets/js/AppRoutes.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+
+<script src="//cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
+
 
 
 <script>
 
-  CustomerService.checkToken();
-
-  CustomerService.getComments();
-
-  highChart.chartTable();
 
   
 

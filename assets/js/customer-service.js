@@ -115,7 +115,7 @@ var CustomerService = {
             
         } else {
             
-            window.location.replace("tpl/index.html");
+            window.location.replace("views/index.html");
         }
     },
 

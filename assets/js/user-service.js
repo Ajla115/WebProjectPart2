@@ -42,7 +42,7 @@ var UserService = {
   
     logout: function () {   //this is a logout function
       localStorage.clear();
-      window.location.replace("index.html");
+      window.location.replace("views/index.html");
     },
 
     getUserInformation: function(){
