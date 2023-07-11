@@ -66,7 +66,7 @@ var CustomerService = {
               
             console.log("test", typeof data);
     
-            $.post(" rest/customer", data)
+            $.post(" ../rest/customer", data)
               .done(function (response) {
 
                 const token = response.token;
@@ -114,7 +114,7 @@ var CustomerService = {
             
         } else {
             
-            window.location.replace("index.html");
+            window.location.replace("tpl/index.html");
         }
     },
 

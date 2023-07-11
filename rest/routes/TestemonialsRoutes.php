@@ -10,6 +10,9 @@ Flight::route('GET /tests', function(){
   Flight::json(Flight::testemonialsService()->get_all());
 });
   
+Flight::route('GET /tests/@id', function($id){
+  Flight::json(Flight::testemonialsService()->get_by_id($id));
+});
 
 
 ?>

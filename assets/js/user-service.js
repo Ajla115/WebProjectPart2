@@ -3,7 +3,7 @@ var UserService = {
       
       var token = localStorage.getItem("user_token"); //if we want to set a value, rather than retireve it then write setItem("user_token", value);
       if (token) {                                    //if token exists, then redirect to index2.html page
-        window.location.replace("index2.html");
+        window.location.replace("../index2.html");
       }
 
       $("#login-form").validate({
@@ -18,7 +18,7 @@ var UserService = {
 
     login: function (entity) {
       $.ajax({
-        url: "rest/login",
+        url: "../rest/login",
         type: "POST",
          beforeSend: function (xhr) {
           xhr.setRequestHeader(
@@ -32,7 +32,7 @@ var UserService = {
         success: function (result) {
           console.log(result);
           localStorage.setItem("user_token", result.token); //this "user_token" is how we have named our token
-          window.location.replace("index2.html");
+          window.location.replace("../index2.html");
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
           toastr.error(XMLHttpRequest.responseJSON.message);
@@ -42,7 +42,7 @@ var UserService = {
   
     logout: function () {   //this is a logout function
       localStorage.clear();
-      window.location.replace("index.html");
+      window.location.replace("tpl/index.html");
     },
 
     getUserInformation: function(){

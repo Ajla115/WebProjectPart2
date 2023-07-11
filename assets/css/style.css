@@ -2,7 +2,6 @@
 # Generalne stvari
 --------------------------------------------------------------*/
 
-
 /*button za usera*/
 .small-button {
   padding: 5px 10px;
@@ -288,6 +287,7 @@
 
 
 body {
+
   font-family: "Open Sans", sans-serif;
    color: #444444;
 }
@@ -1200,7 +1200,7 @@ color: #000000;
 
 
 
-#vw7detail .vw7name h1{
+#vw7name{
 position: absolute;
 width: 371px;
 height: 59px;
@@ -1218,8 +1218,7 @@ letter-spacing: 0.05em;
 color: #000000;
 }
 
-
-#vw7detail .vw7description h1{
+.vw7description h1{
   position: absolute;
 width: 349px;
 height: 278px;
@@ -1234,6 +1233,25 @@ line-height: 30px;
 letter-spacing: 0.05em;
 
 color: #000000;
+
+
+}
+.vw7description h1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.vw7description h1 li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.vw7description h1 span {
+  margin-right: 5px;
+  font-weight: bold;
 }
 
 #vw7detail .vw7description h1 span{
@@ -1252,7 +1270,7 @@ top: 228px;
   }}
 /* Adjust Layout in Responsive View */
 @media (max-width: 768px) {
-  #vw7detail .vw7name h1{
+   #vw7name {
     position: absolute;
     width: 371px;
     height: 47px;
@@ -2143,7 +2161,7 @@ position: absolute;
 width: 149px;
 height: 35px;
 left: 52px;
-top: 1321px;
+top: 721px;
 
 font-family: 'Poppins';
 font-style: normal;
@@ -2161,7 +2179,7 @@ color: #000000;
 width: 371px;
 height: 0px;
 left: 178px;
-top: 1347px;
+top: 747px;
 
 border: 1px solid #1887C7;
 
@@ -2173,7 +2191,7 @@ border: 1px solid #1887C7;
     width: 149px;
     height: 35px;
     left: -38px;
-    top: 2530px;
+    top: 880px;
     font-size: 16px;
   }
   .hatchbacklineReviewsHeading{
@@ -2181,7 +2199,7 @@ border: 1px solid #1887C7;
     width: 221px;
     height: 0px;
     left: 72px;
-    top: 2552px;
+    top: 902px;
 
   }
 }
@@ -2192,7 +2210,7 @@ border: 1px solid #1887C7;
     width: 166px;
     height: 166px;
     left: 99px;
-    top: 1394px;
+    top: 794px;
     background: url(amaribegic.jpeg);
     background-size: cover;
     border-radius: 50%;
@@ -2205,8 +2223,7 @@ border: 1px solid #1887C7;
     width: 166px;
     height: 150.77px;
     left: 111px;
-    top: 2592px;
-    z-index: 999; /* Ensure the dropdown menu appears on top of other elements */
+    top: 942px;
 }
 }
 
@@ -2219,7 +2236,7 @@ border: 1px solid #1887C7;
   width: 177px;
   height: 36px;
   left: 94px;
-  top: 1565px;
+  top: 965px;
   
   font-family: 'Poppins';
   font-style: normal;
@@ -2242,10 +2259,11 @@ border: 1px solid #1887C7;
   width: 177px;
   height: 34.57px;
   left: 106px;
-  top: 2750.46px;
+  top: 1100.46px;
   
   
   }}
+
 
 
 .hatchbackReviewsClientContainer {
@@ -2254,7 +2272,7 @@ border: 1px solid #1887C7;
   width: 931px;
   height: 172px;
   left: 298px;
-  top: 1400px;
+  top: 800px;
   background: #FFFFFF;
   box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
@@ -2266,7 +2284,7 @@ border: 1px solid #1887C7;
     width: 331.96px;
     height: 310.63px;
     left: 28.52px;
-    top: 2832.37px;
+    top: 1182.37px;
 }
 }
 
@@ -3980,8 +3998,8 @@ color: #000000;
     width: 166px;
     height: 166px;
     left: 99px;
-    top: 1394px;
-    background: url(lamijakolic.jpeg);
+    top: 794px;
+    background: url(damir.jpeg);
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -3995,7 +4013,7 @@ color: #000000;
   width: 931px;
   height: 186px;
   left: 298px;
-  top: 1400px;
+  top: 800px;
   background: #FFFFFF;
   box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
@@ -4026,8 +4044,7 @@ color: #000000;
     width: 166px;
     height: 150.77px;
     left: 111px;
-    top: 2592px;
-    z-index: 999; /* Ensure the dropdown menu appears on top of other elements */
+    top: 942px;
 }
 }
 
@@ -4081,7 +4098,7 @@ color: #000000;
       
       .sedanlinedetail {
         position: absolute;
-        width: 382.5px;
+        width: 282.5px;
         height: 0.53px;
         left: 62px;
         top: 122.5px;
@@ -8662,7 +8679,7 @@ background: #1887C7;
 width: 391px;
 height: 35px;
 left: 40px;
-top: 960px;
+top: 1060px;
 
 font-family: 'Poppins';
 font-style: normal;
@@ -8682,7 +8699,7 @@ color: #000000;
   width: 371.02px;
   height: 0px;
   left: 424px;
-  top: 986px;
+  top: 1086px;
   
   border: 1px solid #1887C7;
 
@@ -8702,7 +8719,7 @@ position: absolute;
 width: 360px;
 height: 584px;
 left: 533px;
-top: 1050px;
+top: 1150px;
 
 background: #FFFFFF;
 box-shadow: 0px 4px 20px rgba(77, 166, 186, 0.38);
@@ -9569,7 +9586,7 @@ background: #ffffff;
       }
       .MinivanlinePaymentDetailsHeading{
         position: absolute;
-        width: 142px;
+        width: 102px;
         height: 0px;
         left: 261px;
         top: 1622px;
@@ -13711,7 +13728,7 @@ section {
       position: absolute;
       width: 150px!important;
       height: 53px;
-      left: 193px;
+      left: 185px;
       top: 300px;
       background: #FFA500;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -14804,6 +14821,7 @@ border-radius: 10px;
         .card-wrap {
           position: relative;
           overflow: hidden;
+          justify-content: center;
         }
         .car-swiper-button-next,
         .car-swiper-button-prev {
@@ -14898,182 +14916,48 @@ border-radius: 10px;
     padding: 0;
   }
 }
-
-
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-#footer {
-  background: black;
-  padding: 0 0 30px 0;
-  color: #fff;
-  font-size: 14px;
+#navbar-toggle {
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .card-wrap .col-md-4 {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 }
 
-#footer .footer-top {
-  background: #151515;
-  border-bottom: 1px solid #222222;
-  padding: 60px 0 30px 0;
+/* Mobile menu styles */
+@media (max-width: 991.98px) {
+  
+  .navbar-menu {
+    display: none;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    height: 180px;
+    width: 100%;
+    background-color: #000;
+    padding: 10px;
+    z-index: 999;
+  }
+  #navbar-toggle:checked ~ .navbar-menu {
+   display: block;
+  }
+  .navbar-toggle-label {
+    cursor: pointer;
+    padding: 10px;
+  }
+  .hamburger-icon {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+  }
+  .user-nav-link{
+    left: 15px;
+  }
+  #navbar-toggle {
+    display: none;
+  }
 }
-
-#footer .footer-top .footer-info {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-info h3 {
-  font-size: 28px;
-  margin: 0 0 20px 0;
-  padding: 2px 0 2px 0;
-  line-height: 1;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-#footer .footer-top .footer-info h3 span {
-  color: #ffc451;
-}
-
-#footer .footer-top .footer-info p {
-  font-size: 14px;
-  line-height: 24px;
-  margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
-  color: #fff;
-}
-
-#footer .footer-top .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #292929;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 4px;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-}
-
-#footer .footer-top .social-links a:hover {
-  background: #ffc451;
-  color: #151515;
-  text-decoration: none;
-}
-
-#footer .footer-top h4 {
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-#footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#footer .footer-top .footer-links ul i {
-  padding-right: 2px;
-  color: #ffc451;
-  font-size: 18px;
-  line-height: 1;
-}
-
-#footer .footer-top .footer-links ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-#footer .footer-top .footer-links ul li:first-child {
-  padding-top: 0;
-}
-
-#footer .footer-top .footer-links ul a {
-  color: #fff;
-  transition: 0.3s;
-  display: inline-block;
-  line-height: 1;
-}
-
-#footer .footer-top .footer-links ul a:hover {
-  color: #ffc451;
-}
-
-#footer .footer-top .footer-newsletter form {
-  margin-top: 30px;
-  background: #fff;
-  padding: 6px 10px;
-  position: relative;
-  border-radius: 4px;
-}
-
-#footer .footer-top .footer-newsletter form input[type=email] {
-  border: 0;
-  padding: 4px;
-  width: calc(100% - 110px);
-}
-
-#footer .footer-top .footer-newsletter form input[type=submit] {
-  position: absolute;
-  top: 0;
-  right: -2px;
-  bottom: 0;
-  border: 0;
-  background: none;
-  font-size: 16px;
-  padding: 0 20px;
-  background: #ffc451;
-  color: #151515;
-  transition: 0.3s;
-  border-radius: 0 4px 4px 0;
-}
-
-#footer .footer-top .footer-newsletter form input[type=submit]:hover {
-  background: #ffcd6b;
-}
-
-#footer .copyright {
-  text-align: center;
-  padding-top: 30px;
-}
-
-#footer .credits {
-  padding-top: 10px;
-  text-align: center;
-  font-size: 13px;
-  color: #fff;
-}
-
-  /*@media (min-width: 576px) {
-    #footer .container {
-      max-width: 540px; } }
-  @media (min-width: 768px) {
-    #footer .container  {
-      max-width: 720px; } }
-  @media (min-width: 992px) {
-    #footer .container {
-      max-width: 960px; } }
-  @media (min-width: 1200px) {
-    #footer .container{
-      max-width: 1140px; } }*/
-
-/*.container-fluid {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto; }*/
