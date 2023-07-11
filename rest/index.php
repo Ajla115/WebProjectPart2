@@ -16,6 +16,7 @@ require_once __DIR__ . '/services/VehicleService.php';
 require_once __DIR__ . '/services/UserService.php';
 require_once __DIR__ . '/services/TestemonialsService.php';
 require_once __DIR__ . '/services/CarinfoService.php';
+require_once __DIR__ . '/services/VisitsService.php';
 
 require_once __DIR__ . '/dao/UserDao.php';
 
@@ -31,6 +32,7 @@ Flight::register('vehicleService', "VehicleService");
 Flight::register('userService', "UserService");
 Flight::register('testemonialsService', "TestemonialsService");
 Flight::register('carinfoService', "CarinfoService");
+Flight::register('visitsService', "VisitsService");
 
 Flight::register('userDao', "UserDao");
 
@@ -80,6 +82,7 @@ require_once __DIR__ . '/routes/VehicleRoutes.php';
 require_once __DIR__ . '/routes/UserRoutes.php';
 require_once __DIR__ . '/routes/TestemonialsRoutes.php';
 require_once __DIR__ . '/routes/CarinfoRoutes.php';
+require_once __DIR__ . '/routes/VisitsRoutes.php';
 
 // it is still possible to add custom routes after the imports
 /*Flight::route('GET /', function () {
