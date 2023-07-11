@@ -42,7 +42,7 @@ var UserService = {
   
     logout: function () {   //this is a logout function
       localStorage.clear();
-      window.location.replace("tpl/index.html");
+      window.location.replace("index.html");
     },
 
     getUserInformation: function(){
