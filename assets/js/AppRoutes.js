@@ -24,8 +24,8 @@ $(document).ready(function() {
     });
   
     app.route({
-      view: 'Sedan',
-      load: 'Sedan.html',
+      view: 'Sedan23',
+      load: 'Sedan23.html',
       onCreate: function() {
         // Add any code to run when the route is created
       },
