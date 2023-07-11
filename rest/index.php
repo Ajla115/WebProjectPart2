@@ -38,7 +38,7 @@ Flight::register('userDao', "UserDao");
 
 // middleware
   Flight::route('/*', function(){
-    //perform JWT decode
+    
     $path = Flight::request()->url;
     if ($path == '/login'  || $path == '/customer' || $path == '/docs.json') return TRUE; 
     //deleted || $path == '/customers' because that was not needed

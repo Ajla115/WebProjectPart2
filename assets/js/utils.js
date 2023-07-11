@@ -3,6 +3,7 @@
 var Utils = {
     password_toggle: function(){
         //this is for the password to be seen or invisible
+        //first, look for tags with these ids
         const togglePassword = document.querySelector('#togglePassword');
         const password = document.querySelector('#password');
 

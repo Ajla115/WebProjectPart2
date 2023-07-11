@@ -11,22 +11,6 @@ class BookingDao extends BaseDao
     }
 
 
-    // custom function, which is not present in BaseDao, which will show all paid bookings per a location
-    // query_unique will return only 1 result if multiple are present, but query will return all
-    function getPaidBookingsPerLocation($location_id)
-    {
-        return $this->query("SELECT *
-        FROM bookings
-        WHERE paid = 1 AND location_id = :location_id", [ "location_id" => $location_id]);
-    } 
-
-    //custom function, which will show all unpaid bookings per a location
-    function getUnpaidBookingsPerLocation($location_id)
-    {
-        return $this->query("SELECT *
-        FROM bookings
-        WHERE paid = 0 AND location_id = :location_id", [ "location_id" => $location_id]);
-    } 
 
     
 }

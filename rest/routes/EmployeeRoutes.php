@@ -45,7 +45,7 @@ Flight::route('GET /employees/@id', function ($id) {
 *                   @OA\Property(property="gender", type="string", example="Male",	description="Gender" ),
 *                   @OA\Property(property="email", type="string", example="charliechaplin@gmail.com",	description="Email" ),
 *                   @OA\Property(property="salary", type="double", example="3400",	description="Salary" ),
-*                   @OA\Property(property="phone", type="int", example="62421743",	description="Phone" ),
+*                   @OA\Property(property="phone_number", type="int", example="62421743",	description="Phone" ),
 *        )
 *     )),
 *     @OA\Response(
@@ -82,7 +82,7 @@ Flight::route('POST /employees', function () {
 *                   @OA\Property(property="gender", type="string", example="Male",	description="Gender" ),
 *                   @OA\Property(property="email", type="string", example="charliechaplin@gmail.com",	description="Email" ),
 *                   @OA\Property(property="salary", type="double", example="3400",	description="Salary" ),
-*                   @OA\Property(property="phone", type="int", example="62421743",	description="Phone" ),
+*                   @OA\Property(property="phone_number", type="int", example="62421743",	description="Phone" ),
  *        )
  *     )),
  *     @OA\Response(

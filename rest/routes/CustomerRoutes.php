@@ -40,8 +40,8 @@ Flight::route('GET /customers/@id', function ($id) {
 *     @OA\RequestBody(description="Add new customer", required=true,
 *       @OA\MediaType(mediaType="application/json",
 *    			@OA\Schema(
-*    				@OA\Property(property="first_name", type="string", example="Demo",	description="Customer first name"),
-*    				@OA\Property(property="last_name", type="string", example="Customer",	description="Customer last name" ),
+*    				@OA\Property(property="customer_name", type="string", example="Demo",	description="Customer first name"),
+*    				@OA\Property(property="customer_surname", type="string", example="Customer",	description="Customer last name" ),
 *                   @OA\Property(property="email", type="string", example="demo@gmail.com",	description="Customer email" ),
 *                   @OA\Property(property="password", type="string", example="12345",	description="Password" ),
 *        )
@@ -64,6 +64,7 @@ Flight::route('POST /customer', function () {
 
     // Add the customer to the database
     $customer = Flight::customerService()->add($data);
+    unset($customer['password']);
 
     // Generate the JWT token
     $jwt = JWT::encode($customer, Config::JWT_SECRET(), 'HS256');
@@ -84,8 +85,8 @@ Flight::route('POST /customer', function () {
  *     @OA\RequestBody(description="Customer info", required=true,
  *       @OA\MediaType(mediaType="application/json",
  *    			@OA\Schema(
- *    				@OA\Property(property="first_name", type="string", example="Demo",	description="Customer first name"),
- *    				@OA\Property(property="last_name", type="string", example="Customer",	description="Customer last name" ),
+ *    				@OA\Property(property="customer_name", type="string", example="Demo",	description="Customer first name"),
+ *    				@OA\Property(property="customer_surname", type="string", example="Customer",	description="Customer last name" ),
  *                  @OA\Property(property="email", type="string", example="demo@gmail.com",	description="Customer email" ),
  *                  @OA\Property(property="password", type="string", example="12345",	description="Password" ),
  *        )

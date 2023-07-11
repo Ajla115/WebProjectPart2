@@ -41,8 +41,7 @@ Flight::route('GET /vehicles', function () {
 * )
 */
 
-/*works, however here when I get a randomly generated primary key, 
-this one is way bigger than autoincrementation, and this happens only with this class*/
+/*works*/
 Flight::route('POST /vehicles', function () {
     $data = Flight::request()->data->getData();
     Flight::json(Flight::vehicleService()->add($data));

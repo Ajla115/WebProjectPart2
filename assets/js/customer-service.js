@@ -3,12 +3,12 @@
 var CustomerService = {
  
   emailValidator: function() {
-      jQuery.validator.addMethod(
+      jQuery.validator.addMethod( //this addMethod is an extension from jQuery.validator lib
           "email",
           function (value, element) {
               return (
                   this.optional(element) ||
-                  /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(value)
+                  /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(value) //test(value) je od regex objekta
               );
           },
           "Please enter valid email address!"
@@ -16,8 +16,9 @@ var CustomerService = {
   },
 
   formToJson: function(form) {
-      var array = $(form).serializeArray();
-      var json = {};
+      var array = $(form).serializeArray(); //jQuery method
+      //each object has two properties: name and value
+      var json = {}; //javascript object
   
       $.each(array, function() {
           json[this.name] = this.value || '';
@@ -27,12 +28,12 @@ var CustomerService = {
   },
 
   validateForm: function() {
-      var self = this; // this is a reference to the CustomerService object for using in nested functions
+      var self = this; // this is a reference to the the current object of this validateMethod, context of this changes with different callbacks
       $("#addCustomerForm").validate({
-        focusCleanup: true,
-          errorElement: "em",
+        focusCleanup: true, //element with error, hides error when gets focus
+          errorElement: "em", // type of HTML element that should wrap the error message.
           
-           rules: {
+           rules: {  //Define rules for form validation.
              customer_name: "required",
             customer_surname: "required",
             password: {
@@ -41,7 +42,7 @@ var CustomerService = {
                maxlength: 10,
           },
            },
-          messages: {
+          messages: { //custom error messages
             customer_name: "First name field is required",
             customer_surname: "Last name field is required",
             //email: "Enter a valid email",
@@ -64,7 +65,7 @@ var CustomerService = {
           submitHandler: function (form, validator) {
             const data = self.formToJson(form);  // this self is refering to this JS object
               
-            console.log("test", typeof data);
+            //console.log("test", typeof data);
     
             $.post(" ../rest/customer", data)
               .done(function (response) {

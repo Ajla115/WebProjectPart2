@@ -1,13 +1,10 @@
 <?php
 Flight::route('GET /connection-check', function(){
-    /** TODO
-    * This endpoint prints the message from constructor within MidtermDao class
-    * Goal is to check whether connection is successfully established or not
-    * This endpoint does not have to return output in JSON format
-    */
-
+  /*Coonection check to see if deployed database works*/
     new BookingService();
 });
+
+
 /**
  * @OA\Get(path="/bookings", tags={"bookings"}, security={{"ApiKeyAuth": {}}},
  *         summary="Return all bookings from the API. ",
@@ -21,67 +18,9 @@ Flight::route('GET /bookings', function () {
     Flight::json(Flight::bookingService()->get_all());
 }); 
 
- /**
-* @OA\Post(
-*     path="/bookings", security={{"ApiKeyAuth": {}}},
-*     description="Add booking",
-*     tags={"bookings"},
-*     @OA\RequestBody(description="Add new booking", required=true,
-*       @OA\MediaType(mediaType="application/json",
-*    			@OA\Schema(
-*    				@OA\Property(property="customer_id", type="int", example="1",	description="Customer ID"),
-*    				@OA\Property(property="vehicle_id", type="int", example="1",	description="Vehicle ID" ),
-*                   @OA\Property(property="date_of_booking", type="date", example="2020-07-20",	description="Date of booking" ),
-*                   @OA\Property(property="location_id", type="int", example="1",	description="Location ID" ),
-*                   @OA\Property(property="employee_id", type="int", example="1",	description="Employee ID" ),
-*                   @OA\Property(property="paid", type="tinyint", example="1",	description="Paid or not" ),
-*                   @OA\Property(property="date_of_payment", type="date", example="2020-01-19",	description="Date of payment" ),
-*        )
-*     )),
-*     @OA\Response(
-*         response=200,
-*         description="Booking has been added"
-*     ),
-*     @OA\Response(
-*         response=500,
-*         description="Error"
-*     )
-* )
-*/
-
-//works
-//add a new booking
-Flight::route('POST /bookings', function () {
-    $data = Flight::request()->data->getData();
-    Flight::json(Flight::bookingService()->add($data));
-});
-
- /**
-  * @OA\Get(path="/bookings/paid/{location_id}", tags={"bookings"}, security={{"ApiKeyAuth": {}}},
-  *     @OA\Parameter(in="path", name="location_id", example=1, description="Location ID"),
-  *     @OA\Response(response="200", description="Fetch all paid bookings based on a location")
-  * )
-  */
 
 
-//works, and returns all correct solutions and not just the first one
-//get all paid bookings based on a location
-Flight::route('GET /bookings/paid/@location_id', function ($location_id) {
-    Flight::json(Flight::bookingService()->getPaidBookingsPerLocation($location_id));
-});
 
- /**
-  * @OA\Get(path="/bookings/unpaid/{location_id}", tags={"bookings"}, security={{"ApiKeyAuth": {}}},
-  *     @OA\Parameter(in="path", name="location_id", example=1, description="Location ID"),
-  *     @OA\Response(response="200", description="Fetch all unpaid bookings based on a location")
-  * )
-  */
-
-//works,and returns all correct solutions and not just the first one
-//get all unpaid bookings based on a location
-Flight::route('GET /bookings/unpaid/@location_id', function ($location_id) {
-    Flight::json(Flight::bookingService()->getUnpaidBookingsPerLocation($location_id));
-});
 
 /**
  * @OA\Delete(
@@ -158,6 +97,40 @@ Flight::route("PUT /bookings/@id", function($id){
     Flight::json(['message' => 'Booking edited succesfully', 'data' => Flight::bookingService()->update($data, $id)]); 
     //-> converts the results to the JSON form
     //This array we could have created above, store it in a variable, and then call that variable or do it directly like this
+});
+ /**
+* @OA\Post(
+*     path="/bookings", security={{"ApiKeyAuth": {}}},
+*     description="Add booking",
+*     tags={"bookings"},
+*     @OA\RequestBody(description="Add new booking", required=true,
+*       @OA\MediaType(mediaType="application/json",
+*    			@OA\Schema(
+*    				@OA\Property(property="customer_id", type="int", example="1",	description="Customer ID"),
+*    				@OA\Property(property="vehicle_id", type="int", example="1",	description="Vehicle ID" ),
+*                   @OA\Property(property="date_of_booking", type="date", example="2020-07-20",	description="Date of booking" ),
+*                   @OA\Property(property="location_id", type="int", example="1",	description="Location ID" ),
+*                   @OA\Property(property="employee_id", type="int", example="1",	description="Employee ID" ),
+*                   @OA\Property(property="paid", type="tinyint", example="1",	description="Paid or not" ),
+*                   @OA\Property(property="date_of_payment", type="date", example="2020-01-19",	description="Date of payment" ),
+*        )
+*     )),
+*     @OA\Response(
+*         response=200,
+*         description="Booking has been added"
+*     ),
+*     @OA\Response(
+*         response=500,
+*         description="Error"
+*     )
+* )
+*/
+
+//works
+//add a new booking
+Flight::route('POST /bookings', function () {
+    $data = Flight::request()->data->getData();
+    Flight::json(Flight::bookingService()->add($data));
 });
 
 ?>

@@ -11,5 +11,4 @@
  */
 
 
- //ovdje za production environment ce ici link od deployed application/rest
 ?>

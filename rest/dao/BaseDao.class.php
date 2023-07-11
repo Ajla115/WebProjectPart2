@@ -18,8 +18,7 @@ class BaseDao
         $port = '3306';*/
         
 
-        /*After setting up the deployment on the Digital Ocean, after the finalization of the whole project, 
-        this will be used instead of the part above, perhaps with minor changes*/
+        /*Deployment on DO*/
         $host = Config::DB_HOST();
         $username = Config::DB_USERNAME();
         $password = Config::DB_PASSWORD();
@@ -28,8 +27,7 @@ class BaseDao
 
         $this->conn = new PDO("mysql:host=$host;port=$port;dbname=$schema", $username, $password); 
 
-        /*$this->conn = new PDO("mysql:host=$host;dbname=$schema", $username, $password);
-        -->is this port really necessary when connecting straight to the database*/
+        
 
         //set the PDO error mode to exception
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -86,8 +84,10 @@ class BaseDao
         $query.= ") VALUES (";
         foreach($entity as $column => $value){
             $query.= ":" . $column . ', '; //this : is for binding parameters
-            //even though, it can be a bit confusing, here goes $column, and not $value
-            //that is definitely worth revising
+            //again, column bc placeholders are named after columns in database and not values
+            //but execute will match these placeholders with values from entity
+            //placeholders, binding are important for security, and prevent SQL Injection
+            //and to differentiate between SQL code and data
         }
 
         $query = substr($query, 0, -2);

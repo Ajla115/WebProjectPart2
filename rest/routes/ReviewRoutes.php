@@ -41,6 +41,7 @@ Flight::route('POST /reviews', function () {
     $data = Flight::request()->data->getData();
     Flight::json(Flight::reviewService()->add($data));
 });
+
  /**
   * @OA\Get(path="/reviews/reviewscores/{review_score}", tags={"reviews"}, security={{"ApiKeyAuth": {}}},
   *     @OA\Parameter(in="path", name="review_score", example=5, description="Review score"),
