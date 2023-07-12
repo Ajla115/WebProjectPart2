@@ -12,7 +12,7 @@ class Config
 
   /* public static $host = '127.0.0.1';
     public static $schema = 'rentacar';
-    public static $username = 'doadmin';
+    public static $username = 'root';
     public static $password = 'a1b2c3d4e5';
     public static $port = '3306';*/
 

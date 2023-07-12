@@ -10,7 +10,7 @@ class BaseDao
     { 
         try {
 
-        // $this->table_name = $table_name;
+        $this->table_name = $table_name;
         // $host = '127.0.0.1';
         //  $schema = 'rentacar';
         // $username = 'root';
@@ -18,7 +18,7 @@ class BaseDao
         // $port = '3306';
         
 
-        /*=Deployment on DO*/
+        /*Deployment on DO*/
         $host = Config::DB_HOST();
         $username = Config::DB_USERNAME();
         $password = Config::DB_PASSWORD();
