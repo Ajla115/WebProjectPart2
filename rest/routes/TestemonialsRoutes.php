@@ -33,7 +33,6 @@ Flight::route('GET /tests/@id', function($id){
   *    				@OA\Property(property="first_name", type="string", example="Zikrija",	),
   *    				@OA\Property(property="last_name", type="string", example="Maslenjak",	 ),
     *    				@OA\Property(property="comment", type="string", example="Customer",	 ),
-    *                   @OA\Property(property="Datum", type="string", example="12345",	,
 
   *        )
   *     )),
