@@ -56,6 +56,37 @@ INSERT INTO `bookings` VALUES (1,1,1,'2020-05-07',1,1,1,'2020-05-07'),(2,2,7,'20
 UNLOCK TABLES;
 
 --
+-- Table structure for table `carinfo`
+--
+
+DROP TABLE IF EXISTS `carinfo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `carinfo` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `car_name` varchar(50) DEFAULT NULL,
+  `price` varchar(50) DEFAULT NULL,
+  `age` int DEFAULT NULL,
+  `mileage` varchar(50) DEFAULT NULL,
+  `fuel` varchar(50) DEFAULT NULL,
+  `fuel_usage` varchar(50) DEFAULT NULL,
+  `gearbox` varchar(50) DEFAULT NULL,
+  `max_passengers` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `carinfo`
+--
+
+LOCK TABLES `carinfo` WRITE;
+/*!40000 ALTER TABLE `carinfo` DISABLE KEYS */;
+INSERT INTO `carinfo` VALUES (1,'VW GOLF 7 FACELIFT','80 BAM per day',2021,'34.000 km','Diesel','6.5 l/km','Automatic',5),(2,'SKODA OCTAVIA','75 BAM per day',2017,'75.000 km','Diesel','6 l/km','Automatic',5);
+/*!40000 ALTER TABLE `carinfo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `customers`
 --
 
@@ -69,7 +100,7 @@ CREATE TABLE `customers` (
   `email` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,7 +109,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (1,'Tarik','Karahodzic','tarik.karahodzic@live.com','Bosanska 13'),(2,'Benjamin','Dlakic','benjamin.dlakic@live.com','Ilidzanska 2'),(3,'Mustafa','Ajanovic','mustafa.ajanovic@live.com','Kiseljak 9'),(4,'Amir','Basovic','amir.basovic@live.com','Visoko 6'),(5,'Mujo','Mujic','mujo.mujic@live.com','Trg Nezavisnosti 13'),(6,'Rijad','Cvorak','rijad.cvorak@live.com','Bosanska 13'),(7,'Aner','Salcin','aner.salcin@live.com','Stupska 34'),(8,'Haris','Kadic','haris.kadic@live.com','Bajrama Zenunija 6'),(9,'Naim','Pjanic','naim.pjanic@live.com','Hasana Mujezinovica'),(10,'Nur','Fulin','nur.fulin@live.com','Trg Nezavisnosti 2'),(11,'Lamija','Zuko','lamija.zuko@live.com','Stupska 64'),(12,'Melisa','Geca','melisa.geca@live.com','Meha Drljevica 4'),(13,'Asja','Maric','asja.maric@live.com','Hamdije Kresevljakovica 14'),(14,'asdasd','asdasd','ajla.korman@stu.ibu.edu.ba','R.4NLQ5V7'),(15,'Ajla','Korman','ajla.korman@stu.ibu.edu.ba','1234'),(16,'Mustafa','Ajanovic','mustafa.ajanovic@stu.ibu.edu.ba','81dc9bdb52d04dc20036dbd8313ed055'),(17,'Ajla','Korman','ajla.korman@stu.ibu.edu.ba','827ccb0eea8a706c4c34a16891f84e7b'),(18,'Suada','Korman','suada.korman@stu.ibu.edu.ba','8cf52cf24260bc49455e30d6cc7acee1'),(19,'Suada','Korman','suada.korman@stu.ibu.edu.ba','8cf52cf24260bc49455e30d6cc7acee1'),(20,'Tarik','Korman','tarik.korman@gmail.com','fb5472d0ee866623186cf0b83ac8f8f1'),(21,'Lamija','Colic','lamija.colic@gmail.com','00dc2efa66ca952ad177f437a00c5bdc'),(22,'Selma','Grabovica','selma.grabovica@gmail.com','2bfa99427eef278ff198a11cdaaf2b35'),(23,'Suad','Grabovica','suad.grabovica@gmail.com','8253c06bad235d7a7418a24ececd9b96'),(24,'Emrah','Grabovica','emrah.grabovica@gmail.com','4468d7aab92f910f7b3ce92d57a86bc2');
+INSERT INTO `customers` VALUES (1,'Tarik','Karahodzic','tarik.karahodzic@live.com','Bosanska 13'),(2,'Benjamin','Dlakic','benjamin.dlakic@live.com','Ilidzanska 2'),(3,'Mustafa','Ajanovic','mustafa.ajanovic@live.com','Kiseljak 9'),(4,'Amir','Basovic','amir.basovic@live.com','Visoko 6'),(5,'Mujo','Mujic','mujo.mujic@live.com','Trg Nezavisnosti 13'),(6,'Rijad','Cvorak','rijad.cvorak@live.com','Bosanska 13'),(7,'Aner','Salcin','aner.salcin@live.com','Stupska 34'),(8,'Haris','Kadic','haris.kadic@live.com','Bajrama Zenunija 6'),(9,'Naim','Pjanic','naim.pjanic@live.com','Hasana Mujezinovica'),(10,'Nur','Fulin','nur.fulin@live.com','Trg Nezavisnosti 2'),(11,'Lamija','Zuko','lamija.zuko@live.com','Stupska 64'),(12,'Melisa','Geca','melisa.geca@live.com','Meha Drljevica 4'),(13,'Asja','Maric','asja.maric@live.com','Hamdije Kresevljakovica 14'),(14,'asdasd','asdasd','ajla.korman@stu.ibu.edu.ba','R.4NLQ5V7'),(15,'Ajla','Korman','ajla.korman@stu.ibu.edu.ba','1234'),(16,'Mustafa','Ajanovic','mustafa.ajanovic@stu.ibu.edu.ba','81dc9bdb52d04dc20036dbd8313ed055'),(17,'Ajla','Korman','ajla.korman@stu.ibu.edu.ba','827ccb0eea8a706c4c34a16891f84e7b'),(18,'Suada','Korman','suada.korman@stu.ibu.edu.ba','8cf52cf24260bc49455e30d6cc7acee1'),(19,'Suada','Korman','suada.korman@stu.ibu.edu.ba','8cf52cf24260bc49455e30d6cc7acee1'),(20,'Tarik','Korman','tarik.korman@gmail.com','fb5472d0ee866623186cf0b83ac8f8f1'),(21,'Lamija','Colic','lamija.colic@gmail.com','00dc2efa66ca952ad177f437a00c5bdc'),(22,'Selma','Grabovica','selma.grabovica@gmail.com','2bfa99427eef278ff198a11cdaaf2b35'),(23,'Suad','Grabovica','suad.grabovica@gmail.com','8253c06bad235d7a7418a24ececd9b96'),(24,'Emrah','Grabovica','emrah.grabovica@gmail.com','4468d7aab92f910f7b3ce92d57a86bc2'),(48,'demo65','demo65','demo65@gmail.com','5d78e2fbabdeef078fa614f133738bc5'),(49,'Azra','Maric','azra.maric@gmail.com','9fd250719005a092b414627772c18700'),(50,'deo678','deo678','deo678@gmail.com','e10adc3949ba59abbe56e057f20f883e'),(51,'demo36','demo36','demo36@gmail.com','d534579c65afccfb460d3d2fc7594303'),(52,'demo37','demo37','demo37@gmail.com','ae8554037601dbcc6a74991d6eb3e151'),(53,'demo38','demo38','demo38@gmail.com','3e156eb55122d98eee23b5a345d788dd'),(54,'demo1','demo1','demo1@gmail.com','e10adc3949ba59abbe56e057f20f883e'),(55,'demo2','demo2','demo2@gmail.com','1066726e7160bd9c987c9968e0cc275a'),(56,'demo3','demo3','demo3@gmail.com','297e430d45e7bf6f65f5dc929d6b072b'),(57,'demo71','demo71','demo71@gmail.com','ac8e5b2d61b1064f2678a9b7a9af4521'),(58,'demo72','demo72','demo72@gmail.com','b518451660b34e65c753b5aedb5c5800'),(59,'demo36','demo36','demo36@gmail.com','d534579c65afccfb460d3d2fc7594303'),(60,'Huso','husic','huso@mail.com','d5fe63abe1bf5b2c847ec3f6bb7a284f'),(61,'demo40','demo40','demo40@gmail.com','4497f0f358e037095dc36f10af9be898'),(62,'demo99','demo99','demo99@gmail.com','06a926a8a48a5feff8b1bd581f390917'),(63,'demo100','demo100','demo100@gmail.com','78c247a5c2bb2370289e43031086fb5a'),(64,'Elvedin','Sakic','elvedin.sakic@gmail.com','49c4ea46fa0852701fe1f40e02aa8824'),(65,'Zikrija','Maslenjak','ziki.maslo@gmail.com','213f0e64755fad83929e59e027dce9f6');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +129,7 @@ CREATE TABLE `employees` (
   `birth_date` date DEFAULT NULL,
   `gender` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `salary` double DEFAULT NULL,
+  `salary` int DEFAULT NULL,
   `phone_number` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `employees_location_id_idx` (`location_id`),
@@ -199,31 +230,6 @@ INSERT INTO `testemonials` VALUES (1,'Jurica','Koletic','The customer service wa
 UNLOCK TABLES;
 
 --
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `users` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8_bin DEFAULT NULL,
-  `password` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8_bin DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'student','123');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `vehicles`
 --
 
@@ -252,6 +258,32 @@ LOCK TABLES `vehicles` WRITE;
 INSERT INTO `vehicles` VALUES (1,1,'SUV',2006,'Red','183943'),(2,1,'Sedan',2014,'Blue','120458'),(3,2,'Hatchback',2016,'Grey','156048'),(4,2,'Sedan',2007,'Blue','175063'),(5,1,'SUV',2020,'Grey','100265'),(7,2,'SUV',2016,'White','145689'),(8,1,'SUV',2016,'Black','154628'),(9,1,'Hatchback',2020,'White','125489'),(10,2,'Sedan',2020,'White','135498'),(11,1,'Sedan',2015,'Grey','154895'),(12,2,'SUV',2020,'Red','115790'),(13,1,'Sedan',2021,'Maroon','86542'),(14,2,'SUV',2020,'Black','100548'),(15,1,'SUV',2016,'White','168795'),(16,1,'Minivan',2016,'Red','187456'),(17,2,'SUV',2016,'Red','183943');
 /*!40000 ALTER TABLE `vehicles` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `visits`
+--
+
+DROP TABLE IF EXISTS `visits`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `visits` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `categories` varchar(45) DEFAULT NULL,
+  `men` varchar(45) DEFAULT NULL,
+  `women` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `visits`
+--
+
+LOCK TABLES `visits` WRITE;
+/*!40000 ALTER TABLE `visits` DISABLE KEYS */;
+INSERT INTO `visits` VALUES (1,'2017/18','120','78'),(2,'2018/19','250','370'),(3,'2019/20','500','400'),(4,'2020/21','657','830'),(5,'2021/22','1202','910');
+/*!40000 ALTER TABLE `visits` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -262,4 +294,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-05 18:11:47
+-- Dump completed on 2023-07-12 16:59:47

@@ -58,11 +58,15 @@ var UserService = {
     var lastName = payload.customer_surname;
     var email = payload.email;
     
+
+    
     // Setting the content of the divs of the user.html
     document.getElementById("fullnameDiv").innerText = firstName + " " + lastName;
     document.getElementById("firstnameDiv").innerText = firstName;
     document.getElementById("lastnameDiv").innerText = lastName;
     document.getElementById("emailDiv").innerText =  email;
+    
+
     }
   };
 

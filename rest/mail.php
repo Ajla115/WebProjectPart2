@@ -1,9 +1,9 @@
 <?php
-
+//in order for the email to start, you have to enable option "Less secure apps" on your gmail account
 
     use PHPMailer\PHPMailer\PHPMailer;
 
-    //session_start();
+    
 
     if (isset($_POST['name']) && isset($_POST['email'])) {
         $name = $_POST['name'];
@@ -21,15 +21,15 @@
         $mail->isSMTP();
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPAuth = true;
-        $mail->Username = "ajla.korman@stu.ibu.edu.ba"; //ovaj email salje
-        $mail->Password = 'amvu4B';
+        $mail->Username = "sender@gmail"; //sender email
+        $mail->Password = '******'; //enter the password here
         $mail->Port = 465; //587
         $mail->SMTPSecure = "ssl"; //tls
 
         //Email Settings
         $mail->isHTML(true);
         $mail->setFrom($email, $name);
-        $mail->addAddress("mustafa.ajanovic@stu.ibu.edu.ba"); //ovaj email prima
+        $mail->addAddress("recipient@gmail.com"); //recipient email
         $mail->Subject = $subject;
         $mail->Body = $body;
 

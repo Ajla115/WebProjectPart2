@@ -36,7 +36,7 @@ class UserService extends BaseService
     }
 
     public function add($entity){
-        //unset($entity['phone']); ovo je da smo u form registration koloni imali i opciju da se unese phone, a nema ga u bazi
+       //unset($entity['phone']); //ovo je da smo u form registration koloni imali i opciju da se unese phone, a nema ga u bazi
        $entity['password'] = md5($entity['password']); //ovo je za hashing sifre
         return parent::add($entity);
     }
