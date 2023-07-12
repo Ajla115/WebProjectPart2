@@ -29,7 +29,7 @@
         //Email Settings
         $mail->isHTML(true);
         $mail->setFrom($email, $name);
-        $mail->addAddress("recipient@gmail.com"); //recipient email
+        $mail->addAddress("recipient@gmail"); //recipient email
         $mail->Subject = $subject;
         $mail->Body = $body;
 
