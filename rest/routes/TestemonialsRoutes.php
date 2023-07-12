@@ -49,7 +49,7 @@ Flight::route('GET /tests/@id', function($id){
   */
   
 
-Flight::route('POST /test', function () {
+Flight::route('POST /test/@id', function () {
   $data = Flight::request()->data->getData();
 
 });
