@@ -22,8 +22,8 @@ Flight::route('GET /tests/@id', function($id){
   Flight::json(Flight::testemonialsService()->get_by_id($id));
 });
 
-/*
-@OA\Post(
+/** 
+*@OA\Post(
   *     path="/test/{id}", security={{"ApiKeyAuth": {}}},
   *     description="Add customer",
   *     tags={"customers"},
@@ -49,7 +49,7 @@ Flight::route('GET /tests/@id', function($id){
   */
   
 
-Flight::route('POST /test/@id', function () {
+Flight::route('POST /test/@id', function ($data, $id) {
   $data = Flight::request()->data->getData();
 
 });
