@@ -11,19 +11,19 @@ class BaseDao
         try {
 
         $this->table_name = $table_name;
-        /*$host = '127.0.0.1';
+        $host = '127.0.0.1';
          $schema = 'rentacar';
         $username = 'root';
         $password = 'a1b2c3d4e5';
-        $port = '3306';*/
+        $port = '3306';
         
 
-        /*Deployment on DO*/
+        /*Deployment on DO*//*
         $host = Config::DB_HOST();
         $username = Config::DB_USERNAME();
         $password = Config::DB_PASSWORD();
         $schema = Config::DB_SCHEME();
-        $port = Config::DB_PORT();
+        $port = Config::DB_PORT();*/
 
         $this->conn = new PDO("mysql:host=$host;port=$port;dbname=$schema", $username, $password); 
 
