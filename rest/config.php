@@ -6,19 +6,9 @@ class Config
     // public static $host = '127.0.0.1';
     // public static $schema = 'rentacar';
     // public static $username = 'root';
-    // public static $password = '';
+    // public static $password = 'a1b2c3d4e5';
     // public static $port = '3306';
 
-
-  /* public static $host = '127.0.0.1';
-    public static $schema = 'rentacar';
-    public static $username = 'root';
-    public static $password = 'a1b2c3d4e5';
-    public static $port = '3306';*/
-
-    
-
-    /*ovj dio je kad se opet deploya na D.O., ako je dodano na D.O. onda ce koristiti JWT Token odatle, a ako nema tamo nista, onda ce ovu rijec web koristiti*/
 
     //This part below will be used when deploying the whole project with digital ocean
    public static function DB_HOST(){
